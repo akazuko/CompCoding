@@ -1,0 +1,772 @@
+BFS
+// Program to print BFS traversal from a given source vertex. BFS(int s) 
+// traverses vertices reachable from s.
+#include<iostream>
+#include <list>
+ 
+using namespace std;
+ 
+// This class represents a directed graph using adjacency list representation
+class Graph
+{
+    int V;    // No. of vertices
+    list<int> *adj;    // Pointer to an array containing adjacency lists
+public:
+    Graph(int V);  // Constructor
+    void addEdge(int v, int w); // function to add an edge to graph
+    void BFS(int s);  // prints BFS traversal from a given source s
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int>[V];
+}
+ 
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v’s list.
+}
+ 
+void Graph::BFS(int s)
+{
+    // Mark all the vertices as not visited
+    bool *visited = new bool[V];
+    for(int i = 0; i < V; i++)
+        visited[i] = false;
+ 
+    // Create a queue for BFS
+    list<int> queue;
+ 
+    // Mark the current node as visited and enqueue it
+    visited[s] = true;
+    queue.push_back(s);
+ 
+    // 'i' will be used to get all adjacent vertices of a vertex
+    list<int>::iterator i;
+ 
+    while(!queue.empty())
+    {
+        // Dequeue a vertex from queue and print it
+        s = queue.front();
+        cout << s << " ";
+        queue.pop_front();
+ 
+        // Get all adjacent vertices of the dequeued vertex s
+        // If a adjacent has not been visited, then mark it visited
+        // and enqueue it
+        for(i = adj[s].begin(); i != adj[s].end(); ++i)
+        {
+            if(!visited[*i])
+            {
+                visited[*i] = true;
+                queue.push_back(*i);
+            }
+        }
+    }
+}
+
+DFS
+ 
+
+void Graph::DFSUtil(int v, bool visited[])
+{
+    // Mark the current node as visited and print it
+    visited[v] = true;
+    cout << v << " ";
+ 
+    // Recur for all the vertices adjacent to this vertex
+    list<int>::iterator i;
+    for (i = adj[v].begin(); i != adj[v].end(); ++i)
+        if (!visited[*i])
+            DFSUtil(*i, visited);
+}
+ 
+// DFS traversal of the vertices reachable from v. It uses recursive DFSUtil()
+void Graph::DFS(int v)
+{
+    // Mark all the vertices as not visited
+    bool *visited = new bool[V];
+    for (int i = 0; i < V; i++)
+        visited[i] = false;
+ 
+    // Call the recursive helper function to print DFS traversal
+    DFSUtil(v, visited);
+}
+
+//DETECT CYCLE DIRECTED
+// A C++ Program to detect cycle in a graph
+#include<iostream>
+#include <list>
+#include <limits.h>
+ 
+using namespace std;
+ 
+class Graph
+{
+    int V;    // No. of vertices
+    list<int> *adj;    // Pointer to an array containing adjacency lists
+    bool isCyclicUtil(int v, bool visited[], bool *rs);  // used by isCyclic()
+public:
+    Graph(int V);   // Constructor
+    void addEdge(int v, int w);   // to add an edge to graph
+    bool isCyclic();    // returns true if there is a cycle in this graph
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int>[V];
+}
+ 
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v’s list.
+}
+ 
+// This function is a variation of DFSUytil() in http://www.geeksforgeeks.org/archives/18212
+bool Graph::isCyclicUtil(int v, bool visited[], bool *recStack)
+{
+    if(visited[v] == false)
+    {
+        // Mark the current node as visited and part of recursion stack
+        visited[v] = true;
+        recStack[v] = true;
+ 
+        // Recur for all the vertices adjacent to this vertex
+        list<int>::iterator i;
+        for(i = adj[v].begin(); i != adj[v].end(); ++i)
+        {
+            if ( !visited[*i] && isCyclicUtil(*i, visited, recStack) )
+                return true;
+            else if (recStack[*i])
+                return true;
+        }
+ 
+    }
+    recStack[v] = false;  // remove the vertex from recursion stack
+    return false;
+}
+ 
+// Returns true if the graph contains a cycle, else false.
+// This function is a variation of DFS() in http://www.geeksforgeeks.org/archives/18212
+bool Graph::isCyclic()
+{
+    // Mark all the vertices as not visited and not part of recursion
+    // stack
+    bool *visited = new bool[V];
+    bool *recStack = new bool[V];
+    for(int i = 0; i < V; i++)
+    {
+        visited[i] = false;
+        recStack[i] = false;
+    }
+ 
+    // Call the recursive helper function to detect cycle in different
+    // DFS trees
+    for(int i = 0; i < V; i++)
+        if (isCyclicUtil(i, visited, recStack))
+            return true;
+ 
+    return false;
+}
+ 
+ //UNDIRECTED GRAPH
+ // A C++ Program to detect cycle in an undirected graph
+#include<iostream>
+#include <list>
+#include <limits.h>
+using namespace std;
+ 
+// Class for an undirected graph
+class Graph
+{
+    int V;    // No. of vertices
+    list<int> *adj;    // Pointer to an array containing adjacency lists
+    bool isCyclicUtil(int v, bool visited[], int parent);
+public:
+    Graph(int V);   // Constructor
+    void addEdge(int v, int w);   // to add an edge to graph
+    bool isCyclic();   // returns true if there is a cycle
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int>[V];
+}
+ 
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v’s list.
+    adj[w].push_back(v); // Add v to w’s list.
+}
+ 
+// A recursive function that uses visited[] and parent to detect
+// cycle in subgraph reachable from vertex v.
+bool Graph::isCyclicUtil(int v, bool visited[], int parent)
+{
+    // Mark the current node as visited
+    visited[v] = true;
+ 
+    // Recur for all the vertices adjacent to this vertex
+    list<int>::iterator i;
+    for (i = adj[v].begin(); i != adj[v].end(); ++i)
+    {
+        // If an adjacent is not visited, then recur for that adjacent
+        if (!visited[*i])
+        {
+           if (isCyclicUtil(*i, visited, v))
+              return true;
+        }
+ 
+        // If an adjacent is visited and not parent of current vertex,
+        // then there is a cycle.
+        else if (*i != parent)
+           return true;
+    }
+    return false;
+}
+ 
+// Returns true if the graph contains a cycle, else false.
+bool Graph::isCyclic()
+{
+    // Mark all the vertices as not visited and not part of recursion
+    // stack
+    bool *visited = new bool[V];
+    for (int i = 0; i < V; i++)
+        visited[i] = false;
+ 
+    // Call the recursive helper function to detect cycle in different
+    // DFS trees
+    for (int u = 0; u < V; u++)
+        if (!visited[u]) // Don't recur for u if it is already visited
+          if (isCyclicUtil(u, visited, -1))
+             return true;
+ 
+    return false;
+}
+//top sort
+// A C++ program to print topological sorting of a DAG
+#include<iostream>
+#include <list>
+#include <stack>
+using namespace std;
+ 
+// Class to represent a graph
+class Graph
+{
+    int V;    // No. of vertices'
+ 
+    // Pointer to an array containing adjacency listsList
+    list<int> *adj;
+ 
+    // A function used by topologicalSort
+    void topologicalSortUtil(int v, bool visited[], stack<int> &Stack);
+public:
+    Graph(int V);   // Constructor
+ 
+     // function to add an edge to graph
+    void addEdge(int v, int w);
+ 
+    // prints a Topological Sort of the complete graph
+    void topologicalSort();
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int>[V];
+}
+ 
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v’s list.
+}
+ 
+// A recursive function used by topologicalSort
+void Graph::topologicalSortUtil(int v, bool visited[], 
+                                stack<int> &Stack)
+{
+    // Mark the current node as visited.
+    visited[v] = true;
+ 
+    // Recur for all the vertices adjacent to this vertex
+    list<int>::iterator i;
+    for (i = adj[v].begin(); i != adj[v].end(); ++i)
+        if (!visited[*i])
+            topologicalSortUtil(*i, visited, Stack);
+ 
+    // Push current vertex to stack which stores result
+    Stack.push(v);
+}
+ 
+// The function to do Topological Sort. It uses recursive 
+// topologicalSortUtil()
+void Graph::topologicalSort()
+{
+    stack<int> Stack;
+ 
+    // Mark all the vertices as not visited
+    bool *visited = new bool[V];
+    for (int i = 0; i < V; i++)
+        visited[i] = false;
+ 
+    // Call the recursive helper function to store Topological
+    // Sort starting from all vertices one by one
+    for (int i = 0; i < V; i++)
+      if (visited[i] == false)
+        topologicalSortUtil(i, visited, Stack);
+ 
+    // Print contents of stack
+    while (Stack.empty() == false)
+    {
+        cout << Stack.top() << " ";
+        Stack.pop();
+    }
+}
+
+Boggle (Find all possible words in a board of characters)
+// C++ program for Boggle game
+#include<iostream>
+#include<cstring>
+using namespace std;
+ 
+#define M 3
+#define N 3
+ 
+// Let the given dictionary be following
+string dictionary[] = {"GEEKS", "FOR", "QUIZ", "GO"};
+int n = sizeof(dictionary)/sizeof(dictionary[0]);
+ 
+// A given function to check if a given string is present in
+// dictionary. The implementation is naive for simplicity. As
+// per the question dictionary is givem to us.
+bool isWord(string &str)
+{
+    // Linearly search all words
+    for (int i=0; i<n; i++)
+        if (str.compare(dictionary[i]) == 0)
+          return true;
+    return false;
+}
+ 
+// A recursive function to print all words present on boggle
+void findWordsUtil(char boggle[M][N], bool visited[M][N], int i,
+                   int j, string &str)
+{
+    // Mark current cell as visited and append current character
+    // to str
+    visited[i][j] = true;
+    str = str + boggle[i][j];
+ 
+    // If str is present in dictionary, then print it
+    if (isWord(str))
+        cout << str << endl;
+ 
+    // Traverse 8 adjacent cells of boggle[i][j]
+    for (int row=i-1; row<=i+1 && row<M; row++)
+      for (int col=j-1; col<=j+1 && col<N; col++)
+        if (row>=0 && col>=0 && !visited[row][col])
+          findWordsUtil(boggle,visited, row, col, str);
+ 
+    // Erase current character from string and mark visited
+    // of current cell as false
+    str.erase(str.length()-1);
+    visited[i][j] = false;
+}
+ 
+// Prints all words present in dictionary.
+void findWords(char boggle[M][N])
+{
+    // Mark all characters as not visited
+    bool visited[M][N] = {{false}};
+ 
+    // Initialize current string
+    string str = "";
+ 
+    // Consider every character and look for all words
+    // starting with this character
+    for (int i=0; i<M; i++)
+       for (int j=0; j<N; j++)
+             findWordsUtil(boggle, visited, i, j, str);
+}
+
+//Shortest path with exactly k edges in a directed and weighted graph
+
+// C++ program to find shortest path with exactly k edges
+#include <iostream>
+#include <climits>
+using namespace std;
+ 
+// Define number of vertices in the graph and inifinite value
+#define V 4
+#define INF INT_MAX
+ 
+// A naive recursive function to count walks from u to v with k edges
+int shortestPath(int graph[][V], int u, int v, int k)
+{
+   // Base cases
+   if (k == 0 && u == v)             return 0;
+   if (k == 1 && graph[u][v] != INF) return graph[u][v];
+   if (k <= 0)                       return INF;
+ 
+   // Initialize result
+   int res = INF;
+ 
+   // Go to all adjacents of u and recur
+   for (int i = 0; i < V; i++)
+   {
+       if (graph[u][i] != INF && u != i && v != i)
+       {
+           int rec_res = shortestPath(graph, i, v, k-1);
+           if (rec_res != INF)
+              res = min(res, graph[u][i] + rec_res);
+       }
+   }
+   return res;
+}
+
+//dp solution
+// Dynamic Programming based C++ program to find shortest path with
+// exactly k edges
+#include <iostream>
+#include <climits>
+using namespace std;
+ 
+// Define number of vertices in the graph and inifinite value
+#define V 4
+#define INF INT_MAX
+ 
+// A Dynamic programming based function to find the shortest path from
+// u to v with exactly k edges.
+int shortestPath(int graph[][V], int u, int v, int k)
+{
+    // Table to be filled up using DP. The value sp[i][j][e] will store
+    // weight of the shortest path from i to j with exactly k edges
+    int sp[V][V][k+1];
+ 
+    // Loop for number of edges from 0 to k
+    for (int e = 0; e <= k; e++)
+    {
+        for (int i = 0; i < V; i++)  // for source
+        {
+            for (int j = 0; j < V; j++) // for destination
+            {
+                // initialize value
+                sp[i][j][e] = INF;
+ 
+                // from base cases
+                if (e == 0 && i == j)
+                    sp[i][j][e] = 0;
+                if (e == 1 && graph[i][j] != INF)
+                    sp[i][j][e] = graph[i][j];
+ 
+                //go to adjacent only when number of edges is more than 1
+                if (e > 1)
+                {
+                    for (int a = 0; a < V; a++)
+                    {
+                        // There should be an edge from i to a and a 
+                        // should not be same as either i or j
+                        if (graph[i][a] != INF && i != a &&
+                            j!= a && sp[a][j][e-1] != INF)
+                          sp[i][j][e] = min(sp[i][j][e], graph[i][a] +
+                                                       sp[a][j][e-1]);
+                    }
+                }
+           }
+        }
+    }
+    return sp[u][v][k];
+}
+
+
+// C++ program to find out whether a given graph is Bipartite or not
+#include <iostream>
+#include <queue>
+#define V 4
+using namespace std;
+ 
+// This function returns true if graph G[V][V] is Bipartite, else false
+bool isBipartite(int G[][V], int src)
+{
+    // Create a color array to store colors assigned to all veritces. Vertex 
+    // number is used as index in this array. The value '-1' of  colorArr[i] 
+    // is used to indicate that no color is assigned to vertex 'i'.  The value 
+    // 1 is used to indicate first color is assigned and value 0 indicates 
+    // second color is assigned.
+    int colorArr[V];
+    for (int i = 0; i < V; ++i)
+        colorArr[i] = -1;
+ 
+    // Assign first color to source
+    colorArr[src] = 1;
+ 
+    // Create a queue (FIFO) of vertex numbers and enqueue source vertex
+    // for BFS traversal
+    queue <int> q;
+    q.push(src);
+ 
+    // Run while there are vertices in queue (Similar to BFS)
+    while (!q.empty())
+    {
+        // Dequeue a vertex from queue ( Refer http://goo.gl/35oz8 )
+        int u = q.front();
+        q.pop();
+ 
+         // Find all non-colored adjacent vertices
+        for (int v = 0; v < V; ++v)
+        {
+            // An edge from u to v exists and destination v is not colored
+            if (G[u][v] && colorArr[v] == -1)
+            {
+                // Assign alternate color to this adjacent v of u
+                colorArr[v] = 1 - colorArr[u];
+                q.push(v);
+            }
+ 
+            //  An edge from u to v exists and destination v is colored with
+            // same color as u
+            else if (G[u][v] && colorArr[v] == colorArr[u])
+                return false;
+        }
+    }
+ 
+    // If we reach here, then all adjacent vertices can be colored with 
+    // alternate color
+    return true;
+}
+
+
+find cycle using coloring directed graph
+
+// A DFS based approach to find if there is a cycle
+// in a directed graph.  This approach strictly follows
+// the algorithm given in CLRS book.
+#include <bits/stdc++.h>
+using namespace std;
+ 
+enum Color {WHITE, GRAY, BLACK};
+ 
+// Graph class represents a directed graph using
+// adjacency list representation
+class Graph
+{
+    int V; // No. of vertices
+    list<int>* adj; // adjacency lists
+ 
+    // DFS traversal of the vertices reachable from v
+    bool DFSUtil(int v, int color[]);
+public:
+    Graph(int V);  // Constructor
+ 
+    // function to add an edge to graph
+    void addEdge(int v, int w);
+ 
+    bool isCyclic();
+};
+ 
+// Constructor
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int>[V];
+}
+ 
+// Utility function to add an edge
+void Graph::addEdge(int v, int w)
+{
+    adj[v].push_back(w); // Add w to v's list.
+}
+ 
+// Recursive function to find if there is back edge
+// in DFS subtree tree rooted with 'u'
+bool Graph::DFSUtil(int u, int color[])
+{
+    // GRAY :  This vertex is being processed (DFS
+    //         for this vertex has started, but not
+    //         ended (or this vertex is in function
+    //         call stack)
+    color[u] = GRAY;
+ 
+    // Iterate through all adjacent vertices
+    list<int>::iterator i;
+    for (i = adj[u].begin(); i != adj[u].end(); ++i)
+    {
+        int v = *i;  // An adjacent of u
+ 
+        // If there is
+        if (color[v] == GRAY)
+          return true;
+ 
+        // If v is not processed and there is a back
+        // edge in subtree rooted with v
+        if (color[v] == WHITE && DFSUtil(v, color))
+          return true;
+    }
+ 
+    // Mark this vertex as processed
+    color[u] = BLACK;
+ 
+    return false;
+}
+ 
+// Returns true if there is a cycle in graph
+bool Graph::isCyclic()
+{
+    // Initialize color of all vertices as WHITE
+    int *color = new int[V];
+    for (int i = 0; i < V; i++)
+        color[i] = WHITE;
+ 
+    // Do a DFS traversal beginning with all
+    // vertices
+    for (int i = 0; i < V; i++)
+        if (color[i] == WHITE)
+           if (DFSUtil(i, color) == true)
+              return true;
+ 
+    return false;
+}
+
+// Program to shortest path from a given source vertex ‘s’ to
+// a given destination vertex ‘t’.  Expected time complexity
+// is O(V+E).
+#include<bits/stdc++.h>
+using namespace std;
+ 
+// This class represents a directed graph using adjacency
+// list representation
+class Graph
+{
+    int V;    // No. of vertices
+    list<int> *adj;    // adjacency lists
+public:
+    Graph(int V);  // Constructor
+    void addEdge(int v, int w, int weight); // adds an edge
+ 
+    // finds shortest path from source vertex ‘s’ to
+    // destination vertex ‘d’.
+    int findShortestPath(int s, int d);
+ 
+    // print shortest path from a source vertex ‘s’ to
+    // destination vertex ‘d’.
+    int printShortestPath(int parent[], int s, int d);
+};
+ 
+Graph::Graph(int V)
+{
+    this->V = V;
+    adj = new list<int>[2*V];
+}
+ 
+void Graph::addEdge(int v, int w, int weight)
+{
+    // split all edges of weight 2 into two
+    // edges of weight 1 each.  The intermediate
+    // vertex number is maximum vertex number + 1,
+    // that is V.
+    if (weight==2)
+    {
+        adj[v].push_back(v+V);
+        adj[v+V].push_back(w);
+    }
+    else // Weight is 1
+        adj[v].push_back(w); // Add w to v’s list.
+}
+ 
+// To print the shortest path stored in parent[]
+int Graph::printShortestPath(int parent[], int s, int d)
+{
+    static int level = 0;
+ 
+    // If we reached root of shortest path tree
+    if (parent[s] == -1)
+    {
+        cout << "Shortest Path between " << s << " and "
+             << d << " is "  << s << " ";
+        return level;
+    }
+ 
+    printShortestPath(parent, parent[s], d);
+ 
+    level++;
+    if (s < V)
+        cout << s << " ";
+ 
+    return level;
+}
+ 
+// This function mainly does BFS and prints the
+// shortest path from src to dest. It is assumed
+// that weight of every edge is 1
+int Graph::findShortestPath(int src, int dest)
+{
+    // Mark all the vertices as not visited
+    bool *visited = new bool[2*V];
+    int *parent = new int[2*V];
+ 
+    // Initialize parent[] and visited[]
+    for (int i = 0; i < 2*V; i++)
+    {
+        visited[i] = false;
+        parent[i] = -1;
+    }
+ 
+    // Create a queue for BFS
+    list<int> queue;
+ 
+    // Mark the current node as visited and enqueue it
+    visited[src] = true;
+    queue.push_back(src);
+ 
+    // 'i' will be used to get all adjacent vertices of a vertex
+    list<int>::iterator i;
+ 
+    while (!queue.empty())
+    {
+        // Dequeue a vertex from queue and print it
+        int s = queue.front();
+ 
+        if (s == dest)
+            return printShortestPath(parent, s, dest);
+ 
+        queue.pop_front();
+ 
+        // Get all adjacent vertices of the dequeued vertex s
+        // If a adjacent has not been visited, then mark it
+        // visited and enqueue it
+        for (i = adj[s].begin(); i != adj[s].end(); ++i)
+        {
+            if (!visited[*i])
+            {
+                visited[*i] = true;
+                queue.push_back(*i);
+                parent[*i] = s;
+            }
+        }
+    }
+}
+ 
+// Driver program to test methods of graph class
+int main()
+{
+    // Create a graph given in the above diagram
+    int V = 4;
+    Graph g(V);
+    g.addEdge(0, 1, 2);
+    g.addEdge(0, 2, 2);
+    g.addEdge(1, 2, 1);
+    g.addEdge(1, 3, 1);
+    g.addEdge(2, 0, 1);
+    g.addEdge(2, 3, 2);
+    g.addEdge(3, 3, 2);
+ 
+    int src = 0, dest = 3;
+    cout << "\nShortest Distance between " << src
+         << " and " << dest << " is "
+         << g.findShortestPath(src, dest);
+ 
+    return 0;
+}

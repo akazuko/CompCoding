@@ -1,0 +1,157 @@
+void SieveOfEratosthenes(int n)
+{
+    // Create a boolean array "prime[0..n]" and initialize
+    // all entries it as true. A value in prime[i] will
+    // finally be false if i is Not a prime, else true.
+    bool prime[n+1];
+    memset(prime, true, sizeof(prime));
+ 
+    for (int p=2; p*p<=n; p++)
+    {
+        // If prime[p] is not changed, then it is a prime
+        if (prime[p] == true)
+        {
+            // Update all multiples of p
+            for (int i=p*2; i<=n; i += p)
+                prime[i] = false;
+        }
+    }
+ 
+    // Print all prime numbers
+    for (int p=2; p<=n; p++)
+       if (prime[p])
+          cout << p << " ";
+}
+Dijkstra
+
+int n, m, u, v, weight, _distance[112345], source;
+vector<pair<int, int> > graph[112345]; // an array of vectors that store an integer pair
+pair<int, int> tpair, tpair2; // temporary pairs for insertion into heap and vectors
+
+int main() {
+    cin >> n >> m;
+    for(int i = 0; i < m; i += 1) {
+        cin >> u >> v >> weight;
+        tpair.first = v;
+        tpair.second = weight;
+        graph[u].push_back(tpair);
+        tpair.first = u;
+        tpair.second = weight;
+        graph[v].push_back(tpair);
+    }
+    for(int i = 0; i < n; i += 1) {
+        _distance[i] = -1;
+    }
+    cin >> source;
+    priority_queue<pair<int, int> > q;
+    tpair.first = 0; // minimum distance to source
+    tpair.second = source;
+    q.push(tpair);
+    while(!q.empty()) {
+        tpair = q.top();
+        q.pop();
+        int minimum_distance = -tpair.first;
+        int current_node = tpair.second;
+        if (_distance[current_node] == -1) {
+            _distance[current_node] = minimum_distance;
+            for(auto neighbour: graph[current_node]) {
+                int next_node = neighbour.first;
+                int dist = neighbour.second;
+                if (_distance[next_node] == -1) {
+                    tpair2.first = -(minimum_distance + dist);
+                    tpair2.second = next_node;
+                    q.push(tpair2);
+                }
+            }
+        }
+    }
+    for(int i = 0; i < n; i += 1) {
+        cout << _distance[i] << " ";
+    }
+    cout << endl;
+}
+
+//BFS
+vector<int> graph[112345];
+int n, m, a, b, c, visited[112345];
+ 
+int main () {
+    cin >> n >> m;
+    for(int i = 0; i < m; i += 1) {
+        cin >> a >> b;
+        graph[a].push_back(b);
+        graph[b].push_back(a);
+    }
+    queue<int> q;
+    q.push(0);
+    while(!q.empty()) {
+        c = q.front();
+        q.pop();
+        if(!visited[c]) {
+            visited[c] = 1;
+            cout << c << endl;
+            for(int i = 0; i < graph[c].size(); i += 1)
+                q.push(graph[c][i]);
+        }
+    }
+    return 0;
+}
+
+
+C-strings  (#include <cstring>)         C++ strings  (#include <string>)
+===============================         ================================
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!         !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Declaring a C-string variable           Declaring a C++ string object
+-----------------------------           -----------------------------
+char str[10];                           string str;
+
+Initializing a C-string variable        Initializing a C++ string object
+--------------------------------        --------------------------------
+char str1[11] = "Call home!";           string str1("Call home!");
+char str2[] = "Send money!";            string str2 = "Send money!";
+char str3[] = {'O', 'K', '\0'};         string str3("OK");
+Last line above has same effect as:
+char str3[] = "OK";
+                                        string str4(10, 'x');
+                                        
+Assigning to a C-string variable        Assigning to a C++ string object
+--------------------------------        --------------------------------
+Can't do it, i.e., can't do this:       string str;
+char str[10];                           str = "Hello";
+str = "Hello!";                         str = otherString;
+
+Concatenating two C-strings             Concatenating two C++ string objects
+---------------------------             ------------------------------------
+strcat(str1, str2);                     str1 += str2;
+strcpy(str, strcat(str1, str2));        str = str1 + str2;
+
+Copying a C-string variable             Copying a C++ string object
+---------------------------             ---------------------------
+char str[20];                           string str;
+strcpy(str, "Hello!");                  str = "Hello";
+strcpy(str, otherString);               str = otherString;
+
+Accessing a single character            Accessing a single character
+----------------------------            ----------------------------
+str[index]                              str[index]
+                                        str.at(index)
+                                        str(index, count)
+                                        
+Comparing two C-strings                 Comparing two C++ string objects
+-----------------------                 --------------------------------
+if (strcmp(str1, str2) < 0)             if (str1 < str2)
+    cout << "str1 comes 1st.";              cout << "str1 comes 1st.";
+if (strcmp(str1, str2) == 0)            if (str1 == str2)
+    cout << "Equal strings.";               cout << "Equal strings.";
+if (strcmp(str1, str2) > 0)             if (str1 > str2)
+    cout << "str2 comes 1st.";              cout << "str2 comes 1st.";
+    
+Finding the length of a C-string        Finding the length of a C++ string object
+--------------------------------        -----------------------------------------
+strlen(str)                             str.length()
+
+Output of a C-string variable           Output of a C++ string object
+-----------------------------           -----------------------------
+cout << str;                            cout << str;
+cout << setw(width) << str;             cout << setw(width) << str;

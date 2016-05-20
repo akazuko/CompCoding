@@ -1,0 +1,19 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-08T08:14:35+05:30
+
+====== LLVM ======
+Created Friday 08 April 2016
+Once we have the AST of code it is represented in the LLVM Intermediate representation ( LLVM IR ) 
+1. generates SSA
+2. infinite number of registers can be used.
+3. there is control flow diagram
+4. @ is used for global vars
+5. % is used for local vars
+
+In the example given in the slides, SSA is global var where the val is incremented upon every variable printing.
+
+Eg : for addition we can have : fprintf(f_llvm, " %%add = add nsw i32 %%%d, %d\n", OP1, OP2 )  : refer online
+
+links:
+ http:[[//llvm.org/docs/tutorial/.....]] : check on internet 

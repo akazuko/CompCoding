@@ -1,0 +1,2 @@
+spoj.com/problems/MAKEMAZE
+				 /EZDIJKST

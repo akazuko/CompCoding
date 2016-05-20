@@ -1,0 +1,2021 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0075)https://discuss.codechef.com/questions/48877/data-structures-and-algorithms -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Data Structures and Algorithms - CodeChef Discuss</title>
+        <meta name="description" content="Hi all,I need your help to make a list of most used data structures and algorithms along with their tutorials, implementation and some problems on them. It will be helpful to everyone in many ways. I request everyone to contribute to this list by providing links to tutorials, problems, etc. I will ">
+        <meta name="keywords" content="data-structure,algorithms,datastructure,algorithm">
+        
+        <link rel="canonical" href="./Data Structures and Algorithms - CodeChef Discuss_files/Data Structures and Algorithms - CodeChef Discuss.html">
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?type=rss">
+
+        
+        
+        <link rel="shortcut icon" href="https://discuss.codechef.com/upfiles/favicon_1.ico">
+        <link href="./Data Structures and Algorithms - CodeChef Discuss_files/style.css" rel="stylesheet" type="text/css">
+        
+        <link href="./Data Structures and Algorithms - CodeChef Discuss_files/custom.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="./Data Structures and Algorithms - CodeChef Discuss_files/jquery-ui.js">
+        <!--[if IE 6]>
+        <style type="text/css">
+        img, div, a { behavior: url(/m/default/media/iepngfix/iepngfix.htc) }
+        </style>
+        <![endif]-->
+        
+
+        <script type="text/javascript" async="" src="./Data Structures and Algorithms - CodeChef Discuss_files/atrk.js"></script><script src="./Data Structures and Algorithms - CodeChef Discuss_files/jsapi" type="text/javascript"></script>
+        <script type="text/javascript">
+        /*<![CDATA[*/
+            google.load("jquery", "1.4.2");
+            google.load("jqueryui", "1", {autoload:true});
+
+            var i18nLang = 'en';
+            var appUrl = 'https://discuss.codechef.com'
+            var scriptUrl = '/'
+            var osqaSkin = 'default';
+
+            var messages = {
+                username: '',
+                confirm: "Are you sure?",
+                yes: "Yes",
+                no: "No",
+                message: "Message:",
+                cancel: "Cancel",
+                close: "Close",
+                ok: "Ok",
+                matching_tags_url: "/matching_tags/",
+                word: "word",
+                words: "words",
+                character: "character",
+                characters: "characters"
+            }
+        /*]]>*/
+        </script><script src="./Data Structures and Algorithms - CodeChef Discuss_files/jquery.min.js" type="text/javascript"></script><script src="./Data Structures and Algorithms - CodeChef Discuss_files/jquery-ui.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/osqa.main.js"></script>
+        
+        
+            <style type="text/css">
+                body { margin-top:2.7em; }
+            </style>
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    var element = $('#validate_email_alert');
+                    element.click(function(){notify.close(true);})
+                    notify.show();
+                });
+            </script>
+        
+        
+        
+        
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/osqa.question.js"></script>
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/jquery.caret.js"></script>
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/showdown.js"></script>
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/wmd.js"></script>
+        <link rel="stylesheet" type="text/css" href="./Data Structures and Algorithms - CodeChef Discuss_files/wmd.css">
+
+        
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/viewbox_min.js"></script>
+        <script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/youtube.js"></script>
+        <link rel="stylesheet" type="text/css" href="./Data Structures and Algorithms - CodeChef Discuss_files/viewbox.css">
+        
+        
+
+        <script type="text/javascript">
+        $().ready(function(){
+            $("#nav_questions").attr('className',"on");
+            var answer_sort_tab = "";
+
+            if (answer_sort_tab) {
+                $("#" + answer_sort_tab).attr('className',"on");
+            }
+
+            $('#editor').TextAreaResizer();
+
+            //toggle preview of editor
+            var display = true;
+            var txt = "[hide preview]";
+            $('#pre-collapse').text(txt);
+            $('#pre-collapse').bind('click', function(){
+                txt = display ? "[show preview]" : "[hide preview]";
+                display = !display;
+                $('#previewer').toggle();
+                $('#pre-collapse').text(txt);
+            });
+        });
+
+        function submitClicked(e, f) {
+            if(!(browserTester('chrome') || browserTester('safari'))) {
+                $("input.submit")[0].disabled=true;
+            }
+            window.removeEventListener('beforeunload', beforeUnload, true);
+            if (f) {
+                f.submit();
+            }
+        }
+
+        function beforeUnload(e) {
+
+            if($("textarea#editor")[0].value != "") {
+                return yourWorkWillBeLost(e);
+            }
+
+            var commentBoxes = $("textarea.commentBox");
+            for(var index = 0; index < commentBoxes.length; index++) {
+                if(commentBoxes[index].value != "") {
+                    return yourWorkWillBeLost(e);
+                }
+            }
+        }
+        window.addEventListener('beforeunload', beforeUnload, true);
+        </script>
+        <noscript>
+            &lt;style&gt;
+                .comment.not_top_scorer {
+                    display: block;
+                }
+                .comment-form-container {
+                    display: block;
+                }
+                .div.comment-tools {
+                    display: none;
+                }
+            &lt;/style&gt;
+        </noscript>
+
+        <link rel="search" type="application/opensearchdescription+xml" href="https://discuss.codechef.com/opensearch.xml" title="CodeChef Discuss Search">
+        
+    <style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Hover_Arrow {position: absolute; width: 15px; height: 11px; cursor: pointer}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 5px 0px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 5px; -webkit-border-radius: 5px; -moz-border-radius: 5px; -khtml-border-radius: 5px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 1px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; color: #666666}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: .7em}
+.MathJax_MenuRadioCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuLabel {padding: 1px 2em 3px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #DDDDDD; margin: 4px 3px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: #606872; color: white}
+.MathJax_Menu_Close {position: absolute; width: 31px; height: 31px; top: -15px; left: -15px}
+</style><style type="text/css">.MathJax_Preview .MJXc-math {color: inherit!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><script type="text/javascript" charset="UTF-8" src="./Data Structures and Algorithms - CodeChef Discuss_files/5EKRL0WBbOJCTwVfbWeMktfSWpB-dSaZs1orldSuMvI.js"></script><style type="text/css">.recaptchatable td img{display:block}.recaptchatable .recaptcha_r1_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') 0 -63px no-repeat;width:318px;height:9px}.recaptchatable .recaptcha_r2_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -18px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r2_c2{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -27px 0 no-repeat;width:9px;height:57px}.recaptchatable .recaptcha_r3_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') 0 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r3_c2{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -18px -57px no-repeat;width:300px;height:6px}.recaptchatable .recaptcha_r3_c3{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -9px 0 no-repeat;width:9px;height:63px}.recaptchatable .recaptcha_r4_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -43px 0 no-repeat;width:171px;height:49px}.recaptchatable .recaptcha_r4_c2{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -36px 0 no-repeat;width:7px;height:57px}.recaptchatable .recaptcha_r4_c4{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -214px 0 no-repeat;width:97px;height:57px}.recaptchatable .recaptcha_r7_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:171px;height:8px}.recaptchatable .recaptcha_r8_c1{background:url('https://www.google.com/recaptcha/api/img/red/sprite.png') -43px -49px no-repeat;width:25px;height:8px}.recaptchatable .recaptcha_image_cell center img{height:57px}.recaptchatable .recaptcha_image_cell center{height:57px}.recaptchatable .recaptcha_image_cell{background-color:white;height:57px}#recaptcha_area,#recaptcha_table{width:318px!important}.recaptchatable,#recaptcha_area tr,#recaptcha_area td,#recaptcha_area th{margin:0!important;border:0!important;padding:0!important;border-collapse:collapse!important;vertical-align:middle!important}.recaptchatable *{margin:0;padding:0;border:0;font-family:helvetica,sans-serif;font-size:8pt;color:black;position:static;top:auto;left:auto;right:auto;bottom:auto}.recaptchatable #recaptcha_image{position:relative;margin:auto}.recaptchatable #recaptcha_image #recaptcha_challenge_image{display:block}.recaptchatable #recaptcha_image #recaptcha_ad_image{display:block;position:absolute;top:0}.recaptchatable img{border:0!important;margin:0!important;padding:0!important}.recaptchatable a,.recaptchatable a:hover{cursor:pointer;outline:none;border:0!important;padding:0!important;text-decoration:none;color:blue;background:none!important;font-weight:normal}.recaptcha_input_area{position:relative!important;width:153px!important;height:45px!important;margin-left:7px!important;margin-right:7px!important;background:none!important}.recaptchatable label.recaptcha_input_area_text{margin:0!important;padding:0!important;position:static!important;top:auto!important;left:auto!important;right:auto!important;bottom:auto!important;background:none!important;height:auto!important;width:auto!important}.recaptcha_theme_red label.recaptcha_input_area_text,.recaptcha_theme_white label.recaptcha_input_area_text{color:black!important}.recaptcha_theme_blackglass label.recaptcha_input_area_text{color:white!important}.recaptchatable #recaptcha_response_field{width:153px!important;position:relative!important;bottom:7px!important;padding:0!important;margin:15px 0 0 0!important;font-size:10pt}.recaptcha_theme_blackglass #recaptcha_response_field,.recaptcha_theme_white #recaptcha_response_field{border:1px solid gray}.recaptcha_theme_red #recaptcha_response_field{border:1px solid #cca940}.recaptcha_audio_cant_hear_link{font-size:7pt;color:black}.recaptchatable{line-height:1!important}#recaptcha_instructions_error{color:red!important}.recaptcha_only_if_privacy{float:right;text-align:right}#recaptcha-ad-choices{position:absolute;height:15px;top:0;right:0}#recaptcha-ad-choices img{height:15px}.recaptcha-ad-choices-collapsed{width:30px;height:15px;display:block}.recaptcha-ad-choices-expanded{width:75px;height:15px;display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-collapsed{display:none}#recaptcha-ad-choices:hover .recaptcha-ad-choices-expanded{display:block}
+
+.recaptcha_is_showing_audio .recaptcha_only_if_image,.recaptcha_isnot_showing_audio .recaptcha_only_if_audio,.recaptcha_had_incorrect_sol .recaptcha_only_if_no_incorrect_sol,.recaptcha_nothad_incorrect_sol .recaptcha_only_if_incorrect_sol{display:none !important}</style><style type="text/css">.MJXc-script {font-size: .8em}
+.MJXc-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXc-bold {font-weight: bold}
+.MJXc-italic {font-style: italic}
+.MJXc-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXc-largeop {font-size: 150%}
+.MJXc-largeop.MJXc-int {vertical-align: -.2em}
+.MJXc-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXc-display {display: block; text-align: center; margin: 1em 0}
+.MJXc-math span {display: inline-block}
+.MJXc-box {display: block!important; text-align: center}
+.MJXc-box:after {content: " "}
+.MJXc-rule {display: block!important; margin-top: .1em}
+.MJXc-char {display: block!important}
+.MJXc-mo {margin: 0 .15em}
+.MJXc-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXc-denom {display: inline-table!important; width: 100%}
+.MJXc-denom > * {display: table-row!important}
+.MJXc-surd {vertical-align: top}
+.MJXc-surd > * {display: block!important}
+.MJXc-script-box > *  {display: table!important; height: 50%}
+.MJXc-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXc-script-box > *:last-child > * {vertical-align: bottom}
+.MJXc-script-box > * > * > * {display: block!important}
+.MJXc-mphantom {visibility: hidden}
+.MJXc-munderover {display: inline-table!important}
+.MJXc-over {display: inline-block!important; text-align: center}
+.MJXc-over > * {display: block!important}
+.MJXc-munderover > * {display: table-row!important}
+.MJXc-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXc-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXc-mtr {display: table-row!important}
+.MJXc-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXc-mtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-mlabeledtr {display: table-row!important}
+.MJXc-mlabeledtr > .MJXc-mtd:first-child {padding-left: 0}
+.MJXc-mlabeledtr:first-child > .MJXc-mtd {padding-top: 0}
+.MJXc-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXc-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXc-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXc-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXc-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXc-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXc-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXc-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXc-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXc-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXc-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_CHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style><script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/reload"></script></head>
+    <body><div id="MathJax_Message" style="display: none;"></div>
+        <div class="wrapper">
+        
+        <!-- template header.html -->
+
+<script src="./Data Structures and Algorithms - CodeChef Discuss_files/MathJax.js" type="text/javascript"></script>
+<style>
+.MathJax {
+    font-size: 2em;
+}
+</style>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        initSearchBoxValue();
+    });
+
+    MathJax.Hub.Config({
+        "tex2jax": {
+            inlineMath: [['$', '$']],
+            multiLine: true
+        }
+    });
+
+    function initSearchBoxValue()
+    {
+        var searchKeyword= $("#keywords").val();
+            if (searchKeyword=="")
+            {
+                $("#keywords").val("Search Here...");
+            }
+   }
+
+    function searchBoxOnBlur(){
+        $("#keyword").className="searchInput";
+        if ($("#keywords").val()=="")
+                $("#keywords").val("Search Here...");
+    }
+
+    function searchBoxOnFocus(){
+        $("#keyword").className="searchInputFocused";
+        if ($("#keywords").val()=="Search Here...")
+            $("#keywords").val("");
+   }
+
+    function about(){
+        if (document.URL=="http://osqa.codechef.local/about/")
+        {
+            $("")
+        }
+    }
+
+</script>
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+     <div class="notify">
+         
+         <p>You are not logged in. Please login at <a target="_blank" href="http://www.codechef.com/">www.codechef.com</a> to post your questions!</p>
+         <a id="close-notifycustom" onclick="notify.close(true)">×</a>
+        
+     </div>
+ 
+
+	<div id="roof">
+
+
+
+		<div id="logo">
+			<a href="https://discuss.codechef.com/">
+				<img src="./Data Structures and Algorithms - CodeChef Discuss_files/site-logo_21.png" title="back to home page" alt="CodeChef Discuss logo">
+			</a>
+		</div>
+	  
+		<div id="top">
+		    
+
+            <div id="nav">
+                <a id="nav_questions" class="on" href="https://discuss.codechef.com/questions/">questions</a><a id="nav_tags" href="https://discuss.codechef.com/tags/">tags</a><a id="nav_users" href="https://discuss.codechef.com/users/">users</a><a id="nav_badges" href="https://discuss.codechef.com/badges/">badges</a><a id="nav_unanswered" href="https://discuss.codechef.com/questions/unanswered/">unanswered</a>
+                <a id="horiSeparator">
+                </a><a id="nav_ask" href="https://discuss.codechef.com/questions/ask/" class="special">ask a question</a>
+                <a id="nav_about" href="https://discuss.codechef.com/about" class="off" onclick="about()">about</a>
+                <a id="nav_faq" href="https://discuss.codechef.com/faq">faq</a>
+
+            </div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+  <div class="clear"></div>
+	<div id="searchBar">
+
+
+
+
+        <table id="searchBarTable">
+            <tbody><tr>
+                <td class="left">
+                    CodeChef Discussion
+                </td>
+                <td class="right">
+                    <form action="https://discuss.codechef.com/search/" method="get">
+                    <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="a0ea561dc9e7142a8d3b22dfc2715dec"></div>
+                        <table>
+                            <tbody><tr>
+                                <td>
+                                    <input type="text" class="searchInput" value="" name="q" id="keywords" onfocus="searchBoxOnFocus()" onblur="searchBoxOnBlur()">
+                                </td>
+                                <td>
+                                    <div class="options">
+                                        <input id="type-question" type="radio" value="question" name="t" checked="checked"><label for="type-question">questions</label>
+                                        <input id="type-tag" type="radio" value="tag" name="t"><label for="type-tag">tags</label>
+                                        <input id="type-user" type="radio" value="user" name="t"><label for="type-user">users</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </form>
+                </td>
+            </tr>
+        </tbody></table>
+        <h1 id="separator">
+        </h1>
+	</div>
+
+
+	
+
+<!-- end template header.html -->
+
+        
+
+
+
+<div id="wrapper">
+    
+    
+    <div id="room">
+        <div id="CALeft">
+            
+<div class="headNormal">
+    <h1>Data Structures and Algorithms</h1>
+</div>
+<div id="main-body" class="">
+    <div id="askform">
+            <table style="width:100%;" id="question-table">
+                <tbody><tr>
+                    <td style="width:30px;vertical-align:top">
+                        <div class="vote-buttons">
+                            
+
+<a id="post-48877-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/48877/up/" rel="nofollow"> </a>
+<div id="post-48877-score" class="post-score" title="current number of votes">
+    516
+</div>
+<a id="post-48877-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/48877/down/" rel="nofollow"> </a>
+                            
+
+<a id="favorite-mark" title="mark/unmark this question as favorite (click again to cancel)" class="ajax-command favorite-mark " href="https://discuss.codechef.com/mark_favorite/48877/" rel="nofollow"> </a>
+<div id="favorite-count" class="favorite-count">
+   361
+</div>
+
+                        </div>
+                    </td>
+                    <td>
+                        <div id="item-right">
+                            <div class="question-body">
+                                <p>Hi all,
+I need your help to make a list of most used data structures and algorithms along with their tutorials, implementation and some problems on them. It will be helpful to everyone in many ways. I request everyone to contribute to this list by providing links to tutorials, problems, etc. I will keep updating this list regularly.</p>
+<ol>
+<li>
+<p>Binary Search :
+   <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/binary-search/">Tutorial, Problems</a>, <a href="http://geeksquiz.com/binary-search/">Tutorial, Implementation</a>, <a href="http://www.spoj.com/problems/AGGRCOW">Problem</a></p>
+</li>
+<li>
+<p>Quicksort : 
+   <a href="http://geeksquiz.com/quick-sort/">Tutorial, Implementation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/sorting/">Tutorial</a></p>
+</li>
+<li>
+<p>Merge Sort :
+   <a href="http://geeksquiz.com/merge-sort/">Tutorial, Implementation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/sorting/">Tutorial</a></p>
+</li>
+<li>
+<p>Suffix Array :
+ <a href="http://web.stanford.edu/class/cs97si/suffix-array.pdf">Tutorial</a>, <a href="http://discuss.codechef.com/questions/21385/a-tutorial-on-suffix-arrays">Tutorial, Implementation</a>, <a href="http://apps.topcoder.com/forums/;jsessionid=BC99925E58CB2628CA9AA3AFC13F6593?module=Thread&threadID=627379&start=0">Tutorial, Implementation</a>, <a href="http://www.spoj.com/problems/SUBST1/">Problem</a>, <a href="http://www.codechef.com/problems/MOU1H">Problem</a></p>
+</li>
+<li>
+<p>Knuth-Morris-Pratt Algorithm (KMP) :
+ <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-string-searching-algorithms/">Tutorial</a>, <a href="http://www.geeksforgeeks.org/searching-for-patterns-set-2-kmp-algorithm/">Tutorial, Implementation</a>, <a href="http://keithschwarz.com/interesting/code/?dir=knuth-morris-pratt">Tutorial</a>, <a href="http://www.codechef.com/problems/TASHIFT">Problem</a></p>
+</li>
+<li>
+<p>Rabin-Karp Algorithm :
+  <a href="http://www.geeksforgeeks.org/searching-for-patterns-set-3-rabin-karp-algorithm/">Tutorial, Implementation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-string-searching-algorithms/">Tutorial</a>, <a href="http://www.codechef.com/problems/SSTORY">Problem</a>, <a href="http://codeforces.com/problemset/problem/271/D">Problem</a></p>
+</li>
+<li>
+<p>Tries :
+ <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/using-tries/">Tutorial, Problems</a>, <a href="http://www.geeksforgeeks.org/trie-insert-and-search/">Tutorial : I,</a> <a href="http://www.geeksforgeeks.org/trie-delete/">II</a>, <a href="http://threads-iiith.quora.com/Tutorial-on-Trie-and-example-problems">Tutorial</a>, <a href="http://www.spoj.com/problems/SUBXOR/">Problem</a>, <a href="https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8&category=345&page=show_problem&problem=2683">Problem</a>, <a href="http://www.codechef.com/problems/EST">Problem</a></p>
+</li>
+<li>
+<p>Depth First Traversal of a graph : 
+   <a href="http://www.geeksforgeeks.org/depth-first-traversal-for-a-graph/">Tutorial, Impelementation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-graphs-and-their-data-structures-section-2/">Tutorial, Problems</a>, <a href="http://www.spoj.com/problems/PARADOX/">Problem</a>, <a href="http://www.spoj.com/problems/BUGLIFE/">Problem</a>, <a href="http://www.spoj.com/problems/PT07Z/">Problem</a></p>
+</li>
+<li>
+<p>Breadth First Traversal of a graph : 
+  <a href="http://www.geeksforgeeks.org/breadth-first-traversal-for-a-graph/">Tutorial, Impelementation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-graphs-and-their-data-structures-section-2/">Tutorial, Problems</a>, <a href="http://www.codechef.com/problems/DIGJUMP">Problem</a>, <a href="http://www.spoj.com/problems/ONEZERO/">Problem</a>, <a href="http://www.spoj.com/problems/NAKANJ/">Problem</a>, <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=findSolution#floodfill">Flood Fill</a></p>
+</li>
+<li>
+<p>Dijkstra's Algorithm :
+  <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-graphs-and-their-data-structures-section-3/">Tutorial, Problems</a>, <a href="http://www.codechef.com/problems/REN2013G">Problem</a>, <a href="http://e-maxx.ru/algo/dijkstra">Tutorial(greedy)</a>, <a href="http://e-maxx.ru/algo/dijkstra_sparse">Tutorial (with heap)</a>, <a href="http://zobayer.blogspot.in/2009/12/dijkstras-algorithm-in-c.html">Implementation</a>, <a href="http://www.spoj.com/problems/EZDIJKST/">Problem</a>, <a href="http://www.spoj.com/problems/SHPATH/">Problem</a></p>
+</li>
+<li>
+<p>Binary Indexed Tree :
+   <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=binaryIndexedTrees">Tutorial, Problems</a>, <a href="http://codeforces.com/blog/entry/619">Tutorial</a>, <a href="http://citeseerx.ist.psu.edu/viewdoc/download;jsessionid=AB3AEBC0736E52FA815A3D4C633DE52F?doi=10.1.1.14.8917&rep=rep1&type=pdf">Original Paper</a>, <a href="http://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/">Tutorial</a>, <a href="http://cs.stackexchange.com/a/10541">Tutorial</a>,  <a href="http://www.spoj.com/problems/HORRIBLE/">Problem</a>, <a href="http://www.spoj.com/problems/YODANESS/">Problem</a>, 
+ <a href="http://www.spoj.com/problems/INVCNT/">Problem</a>, <a href="http://www.spoj.com/problems/NICEDAY/">Problem</a>, <a href="http://www.spoj.com/problems/CTRICK/">Problem</a>, <a href="http://www.spoj.com/problems/DQUERY/">Problem</a>, <a href="http://www.spoj.com/problems/MCHAOS/">Problem</a></p>
+</li>
+<li>
+<p>Segment Tree (with lazy propagation) :
+  <a href="http://se7so.blogspot.in/2012/12/segment-trees-and-lazy-propagation.html">Tutorial, Implementation</a>, <a href="http://discuss.codechef.com/questions/38770/lazy-propagation">Tutorial</a>, <a href="http://letuskode.blogspot.in/2013/01/segtrees.html">Tutorial, Problems, Implementation</a>, <a href="http://e-maxx.ru/algo/segment_tree">Tutorial,  Implementation and Various Uses</a>, <a href="http://blog.anudeep2011.com/persistent-segment-trees-explained-with-spoj-problems/">Persistent Segment Tree</a>, problems same as BIT, <a href="http://www.spoj.com/problems/HORRIBLE/">Problem</a>, <a href="http://www.codechef.com/problems/IDOLS">Problem</a>/<em>HLD is used as well</em>/</p>
+</li>
+<li>
+<p>Z algorithm :
+  <a href="http://codeforces.com/blog/entry/3107">Tutorial, Problem</a>, <a href="https://www.cs.umd.edu/class/fall2011/cmsc858s/Lec02-zalg.pdf">Tutorial</a>, problems same as KMP.</p>
+</li>
+<li>
+<p>Floyd Warshall Algorithm :
+ <a href="http://www.geeksforgeeks.org/dynamic-programming-set-16-floyd-warshall-algorithm/">Tutorial, Implementation</a>, <a href="http://www.spoj.com/problems/AMR11F/">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2356">Problem</a></p>
+</li>
+<li>
+<p>Sparse Table(RMQ) :
+ <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/range-minimum-query-and-lowest-common-ancestor/">Tutorial, Problems</a>, <a href="http://mayanknatani.wordpress.com/2013/07/15/range-minimum-query/">Tutorial, Implementation(C++)</a>, <a href="https://sites.google.com/site/indy256/algo/sparse_table_rmq">Java implementation</a></p>
+</li>
+<li>
+<p>Heap / Priority Queue / Heapsort :
+ <a href="http://www.sourcetricks.com/2011/06/c-heaps.html#.U9z8J_mSzfc">Implementation, Explanation</a>, <a href="http://pages.cs.wisc.edu/~vernon/cs367/notes/11.PRIORITY-Q.html">Tutorial</a>, <a href="http://www.cprogramming.com/tutorial/computersciencetheory/heapcode.html">Implementation</a>, <a href="http://www.codechef.com/problems/REVERSE">Problem</a>, Chapter from CLRS</p>
+</li>
+<li>
+<p><a href="http://comeoncodeon.wordpress.com/2011/10/09/modular-multiplicative-inverse/">Modular Multiplicative Inverse</a></p>
+</li>
+<li>
+<p><a href="http://discuss.codechef.com/questions/3869/best-known-algos-for-calculating-ncr-m">nCr % M</a></p>
+</li>
+<li>
+<p>Suffix Automaton :
+  <a href="http://www.cs.nyu.edu/~mohri/pub/nfac.pdf">Detailed Paper</a>, <a href="http://www.geeksforgeeks.org/searching-for-patterns-set-5-finite-automata/">Tutorial, Implementation (I)</a>, <a href="http://www.geeksforgeeks.org/pattern-searching-set-5-efficient-constructtion-of-finite-automata/">Tutorial, Implementation (II)</a>, <a href="http://www.codechef.com/problems/SUBQUERY">Problem</a>, <a href="http://www.codechef.com/problems/TSUBSTR">Problem</a>, <a href="http://www.codechef.com/problems/SSTORY">Problem</a>, <a href="http://www.codechef.com/problems/MOU1H">Problem</a>, <a href="http://e-maxx.ru/algo/suffix_automata">Tutorial, Implementation</a></p>
+</li>
+<li>
+<p>Lowest Common Ancestor :
+ <a href="http://www.topcoder.com/tc?d1=tutorials&d2=lowestCommonAncestor&module=Static">Tutorial, Problems</a>, <a href="http://www14.informatik.tu-muenchen.de/konferenzen/Jass08/courses/1/moufatich/El_Moufatich_Paper.pdf">Paper</a>, <a href="http://ab.inf.uni-tuebingen.de/people/fischer/lsa.pdf">Paper</a>, <a href="http://www.codechef.com/LTIME14/problems/TALCA">Problem</a>, <a href="http://www.spoj.com/problems/LCA/">Problem</a>, <a href="http://www.codechef.com/problems/TRIPS">Problem</a></p>
+</li>
+<li>
+<p>Counting Inversions : 
+ <a href="http://www.geeksforgeeks.org/counting-inversions/">Divide and Conquer</a>, <a href="http://www.quora.com/Algorithms/How-to-count-inversions-using-Segment-Tree-of-an-given-array">Segment Tree</a>, <a href="http://pavelsimo.blogspot.in/2012/09/counting-inversions-in-array-using-BIT.html">Fenwick Tree</a>, <a href="http://www.codechef.com/problems/DYNAINV">Problem</a></p>
+</li>
+<li>
+<p><a href="http://discuss.codechef.com/questions/20842/a-tutorial-on-the-extended-euclids-algorithm">Euclid's Extended Algorithm</a></p>
+</li>
+<li>
+<p>Suffix Tree :
+ <a href="http://stackoverflow.com/questions/9452701/ukkonens-suffix-tree-algorithm-in-plain-english">Tutorial</a>, <a href="http://marknelson.us/1996/08/01/suffix-trees/">Tutorial</a>, <a href="http://www.geeksforgeeks.org/pattern-searching-set-8-suffix-tree-introduction/">Intro</a>, Construction : <a href="http://www.geeksforgeeks.org/ukkonens-suffix-tree-construction-part-1/">I</a>, <a href="http://www.geeksforgeeks.org/ukkonens-suffix-tree-construction-part-2/">II</a>, <a href="http://marknelson.us/attachments/1996/suffix-trees/stree2006.cpp">Implementation</a>, <a href="http://www.sanfoundry.com/cpp-program-implement-suffix-tree/">Implementation</a>, <a href="http://www.spoj.com/problems/LCS/">Problem</a>, <a href="http://www.codechef.com/OCT11/problems/REPSTR">Problem</a>, <a href="http://www.spoj.com/problems/BEADS/">Problem</a>, <a href="http://www.codechef.com/problems/TASTR">Problem</a></p>
+</li>
+<li>
+<p>Dynamic Programming :
+ Chapter from CLRS(essential), <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/dynamic-programming-from-novice-to-advanced/">Tutorial, Problems</a>, <a href="http://www.codechef.com/problems/LEPAINT">Problem</a>, <a href="http://www.codechef.com/problems/COINS">Problem</a>, <a href="http://www.codechef.com/problems/MARCHA1">Problem</a>, <a href="http://discuss.codechef.com/questions/47239/frogv-editorial">Problem</a>, <a href="http://www.quora.com/Dynamic-Programming-DP/Are-there-any-good-resources-or-tutorials-for-dynamic-programming-besides-the-TopCoder-tutorial">Tutorial</a>, <a href="http://www.codechef.com/problems/TSHIRTS">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=11566">Problem</a>, <a href="http://www.spoj.com/problems/SOCOLA/">Problem</a>, <a href="http://www.geeksforgeeks.org/longest-monotonically-increasing-subsequence-size-n-log-n/">Longest Increasing Subsequence</a>, <a href="http://codeforces.com/blog/entry/337">Bitmask DP</a>, <a href="http://www.ugrad.cs.ubc.ca/~cs490/sec202/notes/dp/DP%202.pdf">Bitmask DP</a>, <a href="http://codeforces.com/blog/entry/8219">Optimization</a>, <a href="http://www.spoj.com/problems/TRSTAGE/">Problem</a>, <a href="http://www.spoj.com/problems/LAZYCOWS/">Problem</a>, <a href="http://www.spoj.com/problems/HIST2/">Problem</a>, <a href="http://www.spoj.com/problems/MKPAIRS/">Problem</a>, <a href="http://www.spoj.com/problems/NKLEAVES/">Problem</a>, <a href="http://www.spoj.com/problems/DRAGON2/">Problem</a>, <a href="http://codeforces.com/contest/461/problem/B">Problem</a>, DP on Trees : <a href="http://www.iarcs.org.in/inoi/online-study-material/topics/dp-trees.php">I</a>, <a href="http://www.cs.berkeley.edu/~vazirani/s99cs170/notes/dynamic2.pdf">II</a></p>
+</li>
+<li>
+<p>Basic Data Structures :
+  <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/data-structures/">Tutorial</a>, <a href="https://www.cs.bu.edu/teaching/c/stack/array/">Stack Implementation</a>, <a href="http://geeksquiz.com/queue-set-1introduction-and-array-implementation/">Queue Implementation, Tutorial</a>, <a href="http://codingfreak.blogspot.com/2009/08/implementation-of-singly-linked-list-in.html">Linked List Implementation</a></p>
+</li>
+<li>
+<p><a href="http://discuss.codechef.com/questions/20451/a-tutorial-on-fast-modulo-multiplication-exponential-squaring">Logarithmic Exponentiation</a></p>
+</li>
+<li>
+<p>Graphs :
+ <a href="http://discuss.codechef.com/questions/17801/introduction-to-graphs-definitions-traversal-depth-first-search">Definition, Representation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-graphs-and-their-data-structures-section-1/">Definition, Representation</a>, <a href="http://www.codechef.com/problems/DRGHTS">Problem</a>, <a href="http://www.codechef.com/problems/DIREL">Problem</a></p>
+</li>
+<li>
+<p>Minimum Spanning Tree :
+  <a href="https://www.ics.uci.edu/~eppstein/161/960206.html">Tutorial</a>, <a href="http://www.geeksforgeeks.org/greedy-algorithms-set-2-kruskals-minimum-spanning-tree-mst/">Tutorial, Kruskal's Implementation</a>, <a href="http://www.geeksforgeeks.org/greedy-algorithms-set-5-prims-minimum-spanning-tree-mst-2/">Prim's Implementation</a>, <a href="http://www.spoj.com/problems/MST/">Problem</a>, <a href="http://www.spoj.com/problems/CSTREET/">Problem</a>, <a href="http://www.spoj.com/problems/BLINNET/">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=7921&rd=10765">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=7643&rd=12058">Problem</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/print-all-prime-factors-of-a-given-number/">Efficient Prime Factorization</a></p>
+</li>
+<li>
+<p>Combinatorics :
+ <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/basics-of-combinatorics/">Tutorial, Problems</a>, <a href="http://www.codechef.com/problems/BINTOUR">Problem</a>, <a href="http://apps.topcoder.com/forums/?module=Thread&threadID=334598&start=0&mc=13#335550">Tutorial</a></p>
+</li>
+<li>
+<p>Union Find/Disjoint Set :
+ <a href="http://www.cs.cornell.edu/~wdtseng/icpc/notes/graph_part4.pdf">Tutorial</a>, <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=disjointDataStructure">Tutorial, Problems</a>, <a href="http://www.codechef.com/problems/DISHOWN">Problem</a>, <a href="http://www.spoj.com/problems/BLINNET/">Problem</a>, <a href="http://www.spoj.com/problems/CHAIN/">Problem</a></p>
+</li>
+<li>
+<p>Knapsack problem : 
+ <a href="http://www.geeksforgeeks.org/dynamic-programming-set-10-0-1-knapsack-problem/">Solution, Implementation</a></p>
+</li>
+<li>
+<p>Aho-Corasick String Matching Algorithm :
+ <a href="http://www.cs.sun.ac.za/~lvzijl/courses/rw778/autappl/crous-hw2.pdf">Tutorial</a>, <a href="https://gist.github.com/andmej/1233426">Implementation</a>, <a href="http://www.codechef.com/problems/FAVNUM">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=11514&rd=14544">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=6017">Problem</a>, <a href="http://www.spoj.com/problems/WPUZZLES/">Problem</a></p>
+</li>
+<li>
+<p>Strongly Connected Components :
+ <a href="http://www.geeksforgeeks.org/strongly-connected-components/">Tutorial, Implementation</a>, <a href="http://www.cs.berkeley.edu/~vazirani/s99cs170/notes/lec12.pdf">Tutorial</a>, <a href="http://www.spoj.com/problems/BOTTOM/">Problem</a>, <a href="http://www.spoj.com/problems/BREAK/">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=8488&rd=11125">Problem</a></p>
+</li>
+<li>
+<p>Bellman Ford algorithm :
+ <a href="http://www.geeksforgeeks.org/dynamic-programming-set-23-bellman-ford-algorithm/">Tutorial, Implementation</a>, <a href="http://compprog.wordpress.com/2007/11/29/one-source-shortest-path-the-bellman-ford-algorithm/">Tutorial, Implementation</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=10580">Problem</a>, <a href="http://codeforces.com/problemset/problem/346/D">Problem</a></p>
+</li>
+<li>
+<p>Heavy-light Decomposition :
+   <a href="http://e-maxx.ru/algo/heavy_light">Tutorial, Problems</a>, <a href="http://blog.anudeep2011.com/heavy-light-decomposition/">Tutorial, Implementation</a>, <a href="http://wcipeg.com/wiki/Heavy-light_decomposition">Tutorial</a>, <a href="http://apps.topcoder.com/forums/?module=Thread&threadID=796128&start=0&mc=8">Implementation</a>, <a href="http://pastie.org/private/ozpqitws20ylrj8a57tog#">Implementation</a>, <a href="http://www.spoj.com/problems/QTREE6/">Problem</a>, <a href="http://www.codechef.com/problems/PUSHFLOW">Problem</a>, <a href="http://www.codechef.com/problems/GERALD2">Problem</a></p>
+</li>
+<li>
+<p>Convex Hull :
+ <a href="http://www.geeksforgeeks.org/convex-hull-set-1-jarviss-algorithm-or-wrapping/">Tutorial, Jarvis Algorithm Implementation</a>, <a href="http://www.geeksforgeeks.org/convex-hull-set-2-graham-scan/">Tutorial with Graham scan</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/geometry-concepts-line-intersection-and-its-applications/">Tutorial</a>, <a href="http://stanford.edu/~liszt90/acm/notebook.html#file8">Implementation</a>, <a href="https://www.topcoder.com/stat?c=problem_statement&pm=3996&rd=7224">Problem</a>, <a href="http://codeforces.com/problemset/problem/166/B">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=1960&rd=4670">Problem</a>, <a href="http://acm.timus.ru/problem.aspx?space=1&num=1185">Problem</a>, <a href="http://www.spoj.com/problems/BSHEEP/">Problem</a></p>
+</li>
+<li>
+<p>Line Intersection :
+  <a href="http://www.geeksforgeeks.org/check-if-two-given-line-segments-intersect/">Tutorial, Implementation</a>, <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/geometry-concepts-line-intersection-and-its-applications/">Tutorial, Problems</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/sieve-of-eratosthenes/">Sieve of Erastothenes</a></p>
+</li>
+<li>
+<p>Interval Tree :
+  <a href="http://www.geeksforgeeks.org/interval-tree/">Tutorial, Implementation</a>, <a href="http://www.codechef.com/problems/FLIPCOIN/">Problem</a>, <a href="http://www.spoj.com/problems/THRBL/">Problem</a>, <a href="http://www.spoj.com/problems/LITE/">Problem</a>, <a href="http://www.spoj.com/problems/FREQUENT/">Problem</a>, <a href="http://www.spoj.com/problems/GSS1/">Problem</a>, <a href="http://www.spoj.com/problems/GSS3/">Problem</a>, <a href="http://www.dgp.toronto.edu/people/JamesStewart/378notes/22intervals/">Tutorial</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/counting-sort/">Counting Sort</a></p>
+</li>
+<li>
+<p><a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/understanding-probabilities/">Probabilities</a></p>
+</li>
+<li>
+<p>Matrix Exponentiation :
+<a href="http://discuss.codechef.com/questions/2335/building-up-the-recurrence-matrix-to-compute-recurrences-in-ologn-time">Tutorial</a>, <a href="http://zobayer.blogspot.in/2010/11/matrix-exponentiation.html">Tutorial</a></p>
+</li>
+<li>
+<p>Network flow :
+ <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/maximum-flow-section-1/">(Max Flow)Tutorial : I,</a> <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=maxFlow2">II</a>, <a href="http://www.geeksforgeeks.org/ford-fulkerson-algorithm-for-maximum-flow-problem/">Max Flow(Ford-Fulkerson) Tutorial, Implementation</a>, <a href="http://www.geeksforgeeks.org/minimum-cut-in-a-directed-graph/">(Min Cut) Tutorial, Implementation</a>, <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=minimumCostFlow1">(Min Cost Flow)Tutorial : I,</a> <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/minimum-cost-flow-part-2-algorithms/">II,</a> <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/minimum-cost-flow-part-3-applications/">III</a>, <a href="http://e-maxx.ru/algo/dinic">Dinic's Algorithm with Implementation</a>, <a href="http://e-maxx.ru/algo/edmonds_karp">Max flow by Edmonds Karp with Implementation</a>, <a href="http://www.codechef.com/problems/TWOCOMP">Problem</a>, <a href="http://www.codechef.com/problems/LONGART">Problem</a>, <a href="http://www.codechef.com/problems/ANUBTT">Problem</a>, <a href="http://www.codechef.com/problems/ORDERAAM">Problem</a>, <a href="http://www.codechef.com/problems/PARADE">Problem</a>, <a href="http:">Problem</a>, <a href="http://www.codechef.com/problems/CAKE2AM">Problem</a>, <a href="http://www.spoj.com/problems/EN/">Problem</a>, <a href="http://www.spoj.com/problems/POTHOLE/">Problem</a>, <a href="http://www.spoj.com/problems/SCITIES/">Problem</a>, <a href="http://www.spoj.com/problems/GREED/">Problem</a>, <a href="http://www.spoj.com/problems/TOURS/">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=1931&rd=4709">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=2852&rd=5075">Problem</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=3530&rd=6535">Problem</a></p>
+</li>
+<li>
+<p>K-d tree :
+ <a href="http://web.stanford.edu/class/cs106l/handouts/assignment-3-kdtree.pdf">Tutorial</a>, <a href="http://www.autonlab.org/autonweb/14665/version/2/part/5/data/moore-tutorial.pdf?branch=main&language=en">Tutorial</a>, <a href="http://rosettacode.org/wiki/K-d_tree">Implementation</a>, <a href="http://www.spoj.com/problems/GANNHAT/">Problem</a></p>
+</li>
+<li>
+<p><a href="http://www.sourcetricks.com/2011/06/c-deque.html#.U--v__mSzfc">Deque</a></p>
+</li>
+<li>
+<p>Binary Search Tree :
+ <a href="http://www.sourcetricks.com/2011/06/binary-search-trees-in-c.html#.U--wAvmSzfc">Tutorial, Implementation</a>, <a href="http://geeksquiz.com/binary-search-tree-set-1-search-and-insertion/">Searching and Insertion</a>, <a href="http://geeksquiz.com/binary-search-tree-set-2-delete/">Deletion</a></p>
+</li>
+<li>
+<p>Quick Select :
+  <a href="http://www.sourcetricks.com/2011/06/quick-select.html#.U_CQ0_mSzfc">Implementation</a>, <a href="http://rosettacode.org/wiki/Quickselect_algorithm#C.2B.2B">Implementation</a></p>
+</li>
+<li>
+<p>Treap/Cartesian Tree :
+ <a href="http://habrahabr.ru/post/101818/">Tutorial(detailed)</a>, <a href="http://e-maxx.ru/algo/treap">Tutorial, Implementation</a>, <a href="http://codeforces.com/blog/entry/3767">Uses and Problems</a>, <a href="http://www.codechef.com/problems/CARDSHUF/">Problem</a>, <a href="http://www.codechef.com/problems/CHEFC">Problem</a></p>
+</li>
+<li>
+<p>Game Theory :
+ <a href="http://www.math.ucla.edu/~tom/Game_Theory/comb.pdf">Detailed Paper</a>, <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=algorithmGames">Tutorial, Problems</a>, <a href="http://letuskode.blogspot.ch/2014/08/grundy-numbers.html">Grundy Numbers</a>, <a href="http://www.thelearningpoint.net/home/mathematics/an-introduction-to-game-theory">Tutorial with example problems - I,</a> <a href="http://www.thelearningpoint.net/home/mathematics/a-totorial-on-extensive-games-with-problems-and-solutions">II,</a> <a href="http://www.thelearningpoint.net/home/mathematics/bayesian-games---games-with-incomplete-information">III,</a> <a href="http://www.thelearningpoint.net/home/mathematics/repeated-games---tutorial-and-solved-problems">IV</a>, <a href="http://www.codechef.com/wiki/tutorial-game-theory">Tutorial, Problems</a>, <a href="http://www.spoj.com/problems/NGM/">Problem</a>, <a href="http://www.spoj.com/problems/MCOINS/">Problem</a>, <a href="http://www.spoj.com/problems/QCJ3/">Problem</a>, <a href="http://www.spoj.com/problems/RESN04/">Problem</a>, <a href="http://www.spoj.com/problems/MMMGAME/">Problem</a>, <a href="http://www.spoj.com/problems/PEBBMOV/">Problem</a>, <a href="http://www.codechef.com/problems/CHEFBRO">Problem</a>, <a href="http://www.spoj.com/problems/HUBULLU/">Problem</a>, <a href="http://www.codechef.com/problems/BIGPIZA">Problem</a>, <a href="http://codeforces.com/contest/87/problem/C">Problem</a>, <a href="http://www.spoj.com/problems/CRSCNTRY/">Problem</a>, <a href="http://codeforces.com/blog/entry/3657">Nim</a></p>
+</li>
+<li>
+<p>STL (C++) :
+ <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/power-up-c-with-the-standard-template-library-part-i/">I,</a> <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/power-up-c-with-the-standard-template-library-part-ii-advanced-uses/">II</a>, <a href="http://community.topcoder.com/tc?module=Static&d1=features&d2=082803">Crash Course</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/maximum-bipartite-matching/">Maximum Bipartite Matching</a></p>
+</li>
+<li>
+<p>Manacher's Algorithm :
+ <a href="http://leetcode.com/2011/11/longest-palindromic-substring-part-ii.html">Implementation</a>, <a href="http://tarokuriyama.com/projects/palindrome2.php">Tutorial</a>, <a href="http://tristan-interview.blogspot.in/2011/11/longest-palindrome-substring-manachers.html">Tutorial, Implementation</a>, <a href="http://e-maxx.ru/algo/palindromes_count">Tutorial, Implementation</a>, <a href="http://acm.timus.ru/problem.aspx?space=1&num=1937">Problem</a>, <a href="http://www.spoj.com/problems/LPS/">Problem</a>, <a href="http://www.spoj.com/problems/MSUBSTR/">Problem</a></p>
+</li>
+<li>
+<p><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=primalityTesting">Miller-Rabin Primality Test</a> : <a href="http://rosettacode.org/wiki/Miller-Rabin_primality_test#C">Code</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/stable-marriage-problem/">Stable Marriage Problem</a></p>
+</li>
+<li>
+<p><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=hungarianAlgorithm">Hungarian Algorithm</a>, <a href="https://math.uc.edu/~halpern/Linear.progr.folder/Handouts.lp.02/Hungarian.algorithm.pdf">Tutorial</a></p>
+</li>
+<li>
+<p><a href="https://www.topcoder.com/tc?module=Static&d1=tutorials&d2=lineSweep">Sweep line Algorithm : I</a>, <a href="http://www.geeksforgeeks.org/given-a-set-of-line-segments-find-if-any-two-segments-intersect/">II</a></p>
+</li>
+<li>
+<p>LCP :
+ <a href="http://codeforces.com/blog/entry/12796#comment-175287">Tutorial, Implementation</a>, <a href="http://e-maxx.ru/algo/suffix_array#7">Tutorial, Implementation</a></p>
+</li>
+<li>
+<p><a href="http://compprog.wordpress.com/2007/12/11/gaussian-elimination/">Gaussian Elimination</a></p>
+</li>
+<li>
+<p><a href="http://www.cs.colorado.edu/~srirams/classes/doku.php/pollard_rho_tutorial">Pollard Rho Integer Factorization</a>, <a href="http://www.spoj.com/problems/FACT1/">problem</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/topological-sorting/">Topological Sorting</a></p>
+</li>
+<li>
+<p>Detecting Cycles in a Graph : Directed - <a href="http://www.geeksforgeeks.org/detect-cycle-in-a-graph/">I</a>, <a href="http://www.geeksforgeeks.org/union-find/">II</a>
+     Undirected : <a href="http://www.geeksforgeeks.org/detect-cycle-undirected-graph/">I</a></p>
+</li>
+<li>
+<p>Geometry : <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/geometry-concepts-basic-concepts/">Basics</a>, <a href="http://web.stanford.edu/class/cs97si/09-computational-geometry.pdf">Tutorial</a></p>
+</li>
+<li>
+<p>Backtracking :
+ <a href="http://www.geeksforgeeks.org/backtracking-set-3-n-queen-problem/">N queens problem</a>, <a href="http://www.geeksforgeeks.org/tug-of-war/">Tug of War</a>, <a href="http://www.geeksforgeeks.org/backtracking-set-7-suduku/">Sudoku</a></p>
+</li>
+<li>
+<p>Eulerian and Hamiltonian Paths :
+ <a href="http://www.cs.sfu.ca/~ggbaker/zju/math/euler-ham.html#ham">Tutorial</a>, <a href="http://www.csd.uoc.gr/~hy583/papers/ch14.pdf">Tutorial</a>, <a href="http://www.geeksforgeeks.org/eulerian-path-and-circuit/">(Eulerian Path and Cycle)Implementation</a>, <a href="http://www.geeksforgeeks.org/backtracking-set-7-hamiltonian-cycle/">(Hamiltonian Cycle)Implementation</a></p>
+</li>
+<li>
+<p>Graph Coloring :
+ <a href="http://algorithm.daqwest.com/search?search=Coloring%20algorithm">Tutorial, Implementation</a></p>
+</li>
+<li>
+<p>Meet in the Middle :
+ <a href="http://www.infoarena.ro/blog/meet-in-the-middle">Tutorial</a>, <a href="https://sites.google.com/site/indy256/algo/meet-in-the-middle">Implementation</a></p>
+</li>
+<li>
+<p><a href="http://pastebin.com/aQ8NJ197">Arbitrary Precision Integer(BigInt)</a>, <a href="https://github.com/anudeep2011/programming/blob/master/bigint.cpp">II</a></p>
+</li>
+<li>
+<p><a href="http://www.geeksforgeeks.org/radix-sort/">Radix Sort</a>, <a href="http://www.geeksforgeeks.org/bucket-sort-2/">Bucket Sort</a></p>
+</li>
+<li>
+<p>Johnson's Algorithm :
+<a href="http://www.geeksforgeeks.org/johnsons-algorithm/">Tutorial</a>, <a href="http://en.wikipedia.org/wiki/Johnson's_algorithm">Tutorial</a>, <a href="https://gist.github.com/ashleyholman/6793360">Implementation</a></p>
+</li>
+<li>
+<p>Maximal Matching in a General Graph :
+ <a href="http://e-maxx.ru/algo/matching_edmonds">Blossom/Edmond's Algorithm, Implementation</a>, <a href="http://e-maxx.ru/algo/tutte_matrix">Tutte Matrix</a>, <a href="http://www.codechef.com/problems/SEAGRP">Problem</a></p>
+</li>
+<li>
+<p>Recursion : <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=recursionPt1">I,</a> <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=recursionPt2">II</a>, <a href="http://geeksquiz.com/c-program-for-tower-of-hanoi/">Towers of Hanoi</a> with <a href="http://en.wikipedia.org/wiki/Tower_of_Hanoi#Recursive_solution">explanation</a></p>
+</li>
+<li>
+<p><a href="http://apps.topcoder.com/forums/?module=Thread&threadID=685138&start=0">Inclusion and Exclusion Principle : I</a>, <a href="http://e-maxx.ru/algo/inclusion_exclusion_principle">II</a></p>
+</li>
+<li>
+<p><a href="http://www.quora.com/What-is-coordinate-compression">Co-ordinate Compression</a></p>
+</li>
+<li>
+<p>Sqrt-Decomposition :
+  <a href="http://e-maxx.ru/algo/sqrt_decomposition">Tutorial</a>, <a href="http://sysmagazine.com/posts/138946/">Tutorial</a>, <a href="http://www.spoj.com/problems/RACETIME/">Problem</a>, <a href="http://www.codechef.com/problems/GERALD07">Problem</a></p>
+</li>
+<li>
+<p>Link-Cut Tree : 
+ <a href="http://www.cs.cmu.edu/~sleator/papers/dynamic-trees.pdf">Tutorial</a>, <a href="http://en.wikipedia.org/wiki/Link/cut_tree">Wiki</a>, <a href="http://www.cs.cmu.edu/~avrim/451f12/lectures/lect1009-linkcut.txt">Tutorial, Implementation</a>, <a href="http://www.codechef.com/problems/QTREE6">Problem</a>, <a href="http://www.spoj.com/problems/DYNACON1/">Problem</a>, <a href="http://www.spoj.com/problems/DYNALCA/">Problem</a>, <a href="http://codeforces.com/contest/117/problem/E">Problem</a></p>
+</li>
+<li>
+<p>Euler's Totient Function :
+ <a href="http://e-maxx.ru/algo/euler_function">Explanation, Implementation, Problems</a>, <a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=primeNumbers">Explanation, Problems</a></p>
+</li>
+<li>
+<p>Burnside Lemma :
+ <a href="http://e-maxx.ru/algo/burnside_polya">Tutorial</a>, <a href="http://petr-mitrichev.blogspot.in/2008/11/burnsides-lemma.html">Tutorial</a>, <a href="http://community.topcoder.com/stat?c=problem_statement&pm=9975">Problem</a></p>
+</li>
+<li>
+<p>Edit/Levenshtein Distance :
+ <a href="https://web.stanford.edu/class/cs124/lec/med.pdf">Tutorial</a>, <a href="http://en.wikipedia.org/wiki/Wagner%E2%80%93Fischer_algorithm">Introduction</a>, <a href="http://www.csse.monash.edu.au/~lloyd/tildeAlgDS/Dynamic/Edit/">Tutorial</a>, <a href="http://www.codechef.com/problems/SEATSR">Problem</a>, <a href="http://www.spoj.com/problems/EDIST/">Problem</a></p>
+</li>
+<li>
+<p><a href="http://www.academic.marist.edu/~jzbv/algorithms/Branch%20and%20Bound.htm">Branch and Bound</a></p>
+</li>
+<li>
+<p><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=math_for_topcoders">Math for Competitive Programming</a></p>
+</li>
+<li>
+<p>Mo's Algorithm : <a href="http://blog.anudeep2011.com/mos-algorithm/">Tutorial and Problems</a></p>
+</li>
+</ol>
+                            </div>
+                            <div id="question-tags" class="tags-container tags">
+                                
+                                    <a href="https://discuss.codechef.com/tags/data-structure/" class="post-tag tag-link-data-structure" title="see questions tagged &#39;data-structure&#39;" rel="tag">data-structure</a>
+                                
+                                    <a href="https://discuss.codechef.com/tags/algorithms/" class="post-tag tag-link-algorithms" title="see questions tagged &#39;algorithms&#39;" rel="tag">algorithms</a>
+                                
+                                    <a href="https://discuss.codechef.com/tags/datastructure/" class="post-tag tag-link-datastructure" title="see questions tagged &#39;datastructure&#39;" rel="tag">datastructure</a>
+                                
+                                    <a href="https://discuss.codechef.com/tags/algorithm/" class="post-tag tag-link-algorithm" title="see questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a>
+                                
+                            </div>
+                            <div id="question-controls" class="post-controls">
+                                
+
+                                
+<div class="community-wiki">
+        This question is marked "community wiki".
+        
+    </div>
+                            </div>
+                            <div class="post-update-info-container">
+                                    
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        asked
+        <strong>31 Jul '14, 23:29</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="neo1tech9_7&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/29065/neo1tech9_7">neo1tech9_7</a><br>
+    <span class="score" title="8501 karma"><span class="">8.5k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="15 badges"><span class="silver">●</span><span class="badgecount">15</span></span><span title="37 badges"><span class="bronze">●</span><span class="badgecount">37</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="neo1tech9_7 has 13 accepted answers">19%</span>
+    </p>
+</div>
+
+    <div class="post-update-info post-update-info-edited">
+        <p style="line-height:12px;">
+            <a href="https://discuss.codechef.com/revisions/48877/">
+                wikified
+                <strong>13 Jun, 20:22</strong>
+            </a>
+        </p>
+        
+    </div>
+
+
+                            </div>
+                            
+
+
+<div class="comments-container" id="comments-container-48877">
+    
+        <a name="48897"></a>
+        <div class="comment" id="comment-48897">
+            <div id="post-48897-score" class="comment-score">22</div>
+            <div class="comment-text"><p>Just a suggestion. Sort this list according to their usage. Like, the algorithms which are most used would be ranked first, then the rarely used problems.</p></div>
+            <div class="comment-info" id="comment-48897-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(01 Aug '14, 15:10)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/24314/thespacedude">thespacedude</a>
+                
+            </div>
+        </div>
+    
+        <a name="50805"></a>
+        <div class="comment" id="comment-50805">
+            <div id="post-50805-score" class="comment-score">2</div>
+            <div class="comment-text"><p>For BIT use this tutorial: <a href="http://stackoverflow.com/questions/15439233/bitusing-a-binary-indexed-tree">http://stackoverflow.com/questions/15439233/bitusing-a-binary-indexed-tree</a> - way better than all other resources.
+And thanks for the resource.</p></div>
+            <div class="comment-info" id="comment-50805-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(09 Sep '14, 22:41)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/71415/travis_bickle">travis_bickle</a>
+                
+            </div>
+        </div>
+    
+        <a name="54706"></a>
+        <div class="comment" id="comment-54706">
+            <div id="post-54706-score" class="comment-score">1</div>
+            <div class="comment-text"><p>after spending hours reading KMP from several sites and failing to understand, i found this one very straight forward and well explaining: <a href="http://keithschwarz.com/interesting/code/?dir=knuth-morris-pratt">http://keithschwarz.com/interesting/code/?dir=knuth-morris-pratt</a></p></div>
+            <div class="comment-info" id="comment-54706-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(03 Nov '14, 19:00)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/50979/nishant2002">nishant2002</a>
+                
+            </div>
+        </div>
+    
+        <a name="55107"></a>
+        <div class="comment" id="comment-55107">
+            <div id="post-55107-score" class="comment-score"></div>
+            <div class="comment-text"><p><a href="https://discuss.codechef.com/users/50979/nishant2002">@nishant2002</a> added :)</p></div>
+            <div class="comment-info" id="comment-55107-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(10 Nov '14, 00:52)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/29065/neo1tech9_7">neo1tech9_7</a>
+                
+            </div>
+        </div>
+    
+        <a name="67246"></a>
+        <div class="comment" id="comment-67246">
+            <div id="post-67246-score" class="comment-score">1</div>
+            <div class="comment-text"><p><a href="https://discuss.codechef.com/users/29065/neo1tech9_7"></a><a href="https://discuss.codechef.com/users/29065/neo1tech9_7">@neo1tech9_7</a> it seems the first link for Binary Search isn't valid (<a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/binary-search/">http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/binary-search/</a> ). Look into it.</p></div>
+            <div class="comment-info" id="comment-67246-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(31 Mar, 21:33)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/39705/nisargshah95">nisargshah95</a>
+                
+            </div>
+        </div>
+    
+        <a name="72404"></a>
+        <div class="comment not_top_scorer" id="comment-72404">
+            <div id="post-72404-score" class="comment-score"></div>
+            <div class="comment-text"><p><a href="https://discuss.codechef.com/users/29065/neo1tech9_7">@neo1tech9_7</a> all topcoder links need to be updated
+from <a href="http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-string-searching-algorithms/">http://help.topcoder.com/data-science/competing-in-algorithm-challenges/algorithm-tutorials/introduction-to-string-searching-algorithms/</a>
+to <a href="http://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/">http://www.topcoder.com/community/data-science/data-science-tutorials/introduction-to-string-searching-algorithms/</a></p></div>
+            <div class="comment-info" id="comment-72404-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(28 Jun, 23:00)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/44370/ankursmooth">ankursmooth</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-48877" class="comment-tools">
+    
+        <span class="comments-showing">
+            showing 5 of 6
+        </span>
+        <a href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms#" class="show-all-comments-link">show all</a>
+    
+    
+</div>
+<div id="comment-48877-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                        </div>
+
+                    </td>
+                </tr>
+            </tbody></table>
+            
+            
+                <hr>
+                <div class="tabBar">
+                    <a name="sort-top"></a>
+                    <div class="headQuestions">
+                    77 Answers:
+                    </div>
+                    
+<div class="tabsA"><a href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=oldest" title="oldest answers will be shown first">oldest</a><a href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=newest" title="newest answers will be shown first">newest</a><a href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes" class="on" title="most voted answers will be shown first">most voted</a></div>
+
+                </div>
+                <p class="paginator"><span class="curr this_page">1</span><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=2">2</a><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=3">3</a><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=4">4</a><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=5">5</a>
+                
+            
+        
+    
+        
+          ...
+        
+    
+        
+            
+                
+                     <a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=8">8</a><span class="next"><a href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=2" title="next page">next »</a></span></p>
+
+                
+                    <a name="48887"></a>
+                    <div id="answer-container-48887" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-48887-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/48887/up/" rel="nofollow"> </a>
+<div id="post-48887-score" class="post-score" title="current number of votes">
+    30
+</div>
+<a id="post-48887-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/48887/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>A good initiative :)</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/48887/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>01 Aug '14, 05:18</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/ac3ee051ca422f154bb87bbb7b9a68ac.jpg" alt="its_pheonix&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/63738/its_pheonix">its_pheonix</a><br>
+    <span class="score" title="2271 karma"><span class="">2.3k</span></span><span title="6 badges"><span class="badge1">●</span><span class="badgecount">6</span></span><span title="20 badges"><span class="silver">●</span><span class="badgecount">20</span></span><span title="21 badges"><span class="bronze">●</span><span class="badgecount">21</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="its_pheonix has 2 accepted answers">11%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-48887">
+    
+</div>
+<div id="comment-tools-48887" class="comment-tools">
+    
+    
+</div>
+<div id="comment-48887-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49126"></a>
+                    <div id="answer-container-49126" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49126-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49126/up/" rel="nofollow"> </a>
+<div id="post-49126-score" class="post-score" title="current number of votes">
+    29
+</div>
+<a id="post-49126-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49126/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p><a href="http://stackoverflow.com/questions/500607/what-are-the-lesser-known-but-useful-data-structures">link</a></p>
+<p>The above link has lesser known but useful data structures.</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49126/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>07 Aug '14, 10:54</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="codemaster1994&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/50526/codemaster1994">codemaster1994</a><br>
+    <span class="score" title="2159 karma"><span class="">2.2k</span></span><span title="7 badges"><span class="badge1">●</span><span class="badgecount">7</span></span><span title="20 badges"><span class="silver">●</span><span class="badgecount">20</span></span><span title="18 badges"><span class="bronze">●</span><span class="badgecount">18</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="codemaster1994 has no accepted answers">0%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49126">
+    
+</div>
+<div id="comment-tools-49126" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49126-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49783"></a>
+                    <div id="answer-container-49783" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49783-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49783/up/" rel="nofollow"> </a>
+<div id="post-49783-score" class="post-score" title="current number of votes">
+    26
+</div>
+<a id="post-49783-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49783/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>Really good work.</p>
+<p>God Bless you and you will win IOI :)</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49783/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>17 Aug '14, 11:59</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="tech_boy&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/36077/tech_boy">tech_boy</a><br>
+    <span class="score" title="1151 karma"><span class="">1.2k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="19 badges"><span class="silver">●</span><span class="badgecount">19</span></span><span title="31 badges"><span class="bronze">●</span><span class="badgecount">31</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="tech_boy has 3 accepted answers">7%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49783">
+    
+        <a name="50436"></a>
+        <div class="comment" id="comment-50436">
+            <div id="post-50436-score" class="comment-score"></div>
+            <div class="comment-text"><p>More concise collection of STL...
+<a href="http://www.sgi.com/tech/stl/">http://www.sgi.com/tech/stl/</a></p></div>
+            <div class="comment-info" id="comment-50436-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(31 Aug '14, 14:13)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/36077/tech_boy">tech_boy</a>
+                
+            </div>
+        </div>
+    
+        <a name="50885"></a>
+        <div class="comment" id="comment-50885">
+            <div id="post-50885-score" class="comment-score">3</div>
+            <div class="comment-text"><p>Thanks friends .These links are really useful for newbies like us. May Allah(swt) bless and guide all those who contributed in collecting these links.</p></div>
+            <div class="comment-info" id="comment-50885-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(13 Sep '14, 01:05)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/55103/ahsankamal">ahsankamal</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-49783" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49783-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49135"></a>
+                    <div id="answer-container-49135" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49135-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49135/up/" rel="nofollow"> </a>
+<div id="post-49135-score" class="post-score" title="current number of votes">
+    17
+</div>
+<a id="post-49135-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49135/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>For heavy-light decomposition - <code> <a href="http://wcipeg.com/wiki/Heavy-light_decomposition">http://wcipeg.com/wiki/Heavy-light_decomposition</a> </code></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49135/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>07 Aug '14, 13:48</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="rajat_dtc&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/51006/rajat_dtc">rajat_dtc</a><br>
+    <span class="score" title="1769 karma"><span class="">1.8k</span></span><span title="5 badges"><span class="badge1">●</span><span class="badgecount">5</span></span><span title="14 badges"><span class="silver">●</span><span class="badgecount">14</span></span><span title="22 badges"><span class="bronze">●</span><span class="badgecount">22</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="rajat_dtc has 4 accepted answers">7%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49135">
+    
+</div>
+<div id="comment-tools-49135" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49135-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49520"></a>
+                    <div id="answer-container-49520" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49520-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49520/up/" rel="nofollow"> </a>
+<div id="post-49520-score" class="post-score" title="current number of votes">
+    17
+</div>
+<a id="post-49520-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49520/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>Matrix exponentiation : <a href="http://zobayer.blogspot.in/2010/11/matrix-exponentiation.html">http://zobayer.blogspot.in/2010/11/matrix-exponentiation.html</a> <br>
+related problem : <a href="http://www.hackerearth.com/problem/algorithm/long-walks-from-office-to-home-sweet-home-1/">http://www.hackerearth.com/problem/algorithm/long-walks-from-office-to-home-sweet-home-1/</a>
+<br><br></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49520/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>12 Aug '14, 21:49</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="ravi0213&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/45860/ravi0213">ravi0213</a><br>
+    <span class="score" title="2140 karma"><span class="">2.1k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="24 badges"><span class="bronze">●</span><span class="badgecount">24</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="ravi0213 has 8 accepted answers">15%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49520">
+    
+</div>
+<div id="comment-tools-49520" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49520-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49077"></a>
+                    <div id="answer-container-49077" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49077-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49077/up/" rel="nofollow"> </a>
+<div id="post-49077-score" class="post-score" title="current number of votes">
+    12
+</div>
+<a id="post-49077-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49077/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>Take a look of this website once....Explanation of all the algorithms from different sources can be found at one place!!! 
+<a href="http://algorithm.daqwest.com/">http://algorithm.daqwest.com/</a></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49077/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>05 Aug '14, 19:49</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/e6d933bf98a34d53e438a036e6cf6fab.jpg" alt="vicky002&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/37883/vicky002">vicky002 ♦♦</a><br>
+    <span class="score" title="216 karma">216</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="1 badges"><span class="silver">●</span><span class="badgecount">1</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="vicky002 has 3 accepted answers">27%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49077">
+    
+</div>
+<div id="comment-tools-49077" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49077-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="48879"></a>
+                    <div id="answer-container-48879" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-48879-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/48879/up/" rel="nofollow"> </a>
+<div id="post-48879-score" class="post-score" title="current number of votes">
+    8
+</div>
+<a id="post-48879-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/48879/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>we already have a topic for list of imp algo <br>
+<a href="http://discuss.codechef.com/questions/18752/what-are-the-must-known-algorithms-for-online-programming-contests">http://discuss.codechef.com/questions/18752/what-are-the-must-known-algorithms-for-online-programming-contests</a></p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/48879/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>01 Aug '14, 00:02</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="ravi0213&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/45860/ravi0213">ravi0213</a><br>
+    <span class="score" title="2140 karma"><span class="">2.1k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="24 badges"><span class="bronze">●</span><span class="badgecount">24</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="ravi0213 has 8 accepted answers">15%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-48879">
+    
+</div>
+<div id="comment-tools-48879" class="comment-tools">
+    
+    
+</div>
+<div id="comment-48879-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49016"></a>
+                    <div id="answer-container-49016" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49016-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49016/up/" rel="nofollow"> </a>
+<div id="post-49016-score" class="post-score" title="current number of votes">
+    8
+</div>
+<a id="post-49016-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49016/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>Nice Initiative I would recommend <a href="http://e-maxx.ru/algo/">http://e-maxx.ru/algo/</a> for the implementation and theory. Make use of google translate. It also have a good set of questions in the end.</p>
+<p>For DP I would recommend <a href="http://goo.gl/u8dexo">this</a> the topic is nicely explained by Mimino.(For starters)</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49016/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>04 Aug '14, 02:21</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="johri21&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/8180/johri21">johri21</a><br>
+    <span class="score" title="436 karma">436</span><span title="1 badges"><span class="badge1">●</span><span class="badgecount">1</span></span><span title="3 badges"><span class="silver">●</span><span class="badgecount">3</span></span><span title="6 badges"><span class="bronze">●</span><span class="badgecount">6</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="johri21 has one accepted answer">12%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49016">
+    
+</div>
+<div id="comment-tools-49016" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49016-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49693"></a>
+                    <div id="answer-container-49693" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49693-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49693/up/" rel="nofollow"> </a>
+<div id="post-49693-score" class="post-score" title="current number of votes">
+    8
+</div>
+<a id="post-49693-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49693/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>One might try <a href="http://e-maxx.ru/">http://e-maxx.ru/</a> :) It's in Russian though, but Google translator might help. </p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49693/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>15 Aug '14, 14:35</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/default.jpg" alt="gdisastery1&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/4324/gdisastery1">gdisastery1</a><br>
+    <span class="score" title="1791 karma"><span class="">1.8k</span></span><span title="4 badges"><span class="badge1">●</span><span class="badgecount">4</span></span><span title="13 badges"><span class="silver">●</span><span class="badgecount">13</span></span><span title="17 badges"><span class="bronze">●</span><span class="badgecount">17</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="gdisastery1 has 4 accepted answers">11%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49693">
+    
+        <a name="60957"></a>
+        <div class="comment" id="comment-60957">
+            <div id="post-60957-score" class="comment-score"></div>
+            <div class="comment-text"><p>See this: <a href="http://codeforces.com/blog/entry/5651">http://codeforces.com/blog/entry/5651</a> and <a href="https://onedrive.live.com/?cid=a7b8002ee242b572&id=A7B8002EE242B572!3746">https://onedrive.live.com/?cid=a7b8002ee242b572&amp;id=A7B8002EE242B572!3746</a></p></div>
+            <div class="comment-info" id="comment-60957-info">
+                
+                
+                
+                
+                    
+
+                <span class="comment-age">(07 Jan, 14:27)</span>
+                <a class="comment-user userinfo" href="https://discuss.codechef.com/users/40924/damn_me">damn_me</a>
+                
+            </div>
+        </div>
+    
+</div>
+<div id="comment-tools-49693" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49693-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                    <a name="49130"></a>
+                    <div id="answer-container-49130" class="answer ">
+                        <table style="width:100%;">
+                            <tbody><tr>
+                                <td style="width:30px;vertical-align:top">
+                                    <div class="vote-buttons">
+                                        
+
+<a id="post-49130-upvote" title="I like this post (click again to cancel)" class="ajax-command post-vote up " href="https://discuss.codechef.com/vote/49130/up/" rel="nofollow"> </a>
+<div id="post-49130-score" class="post-score" title="current number of votes">
+    7
+</div>
+<a id="post-49130-downvote" title="I dont like this post (click again to cancel)" class="ajax-command post-vote down" href="https://discuss.codechef.com/vote/49130/down/" rel="nofollow"> </a>
+                                        
+
+
+    
+
+
+
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="item-right">
+                                        <div class="answer-body">
+                                            <p>I think stackoverflow can also be of immense help.<br>
+Really awesome effort.</p>
+                                        </div>
+                                        <div class="answer-controls post-controls">
+                                            
+<span class="action-link"><a rel="nofollow" title="answer permanent link" class="ajax-command withprompt  copy" href="https://discuss.codechef.com/answer_link/49130/">link</a></span>
+                                            
+
+                                        </div>
+                                        <div class="post-update-info-container">
+                                            
+<div class="post-update-info post-update-info-user">
+    <p style="line-height:12px;">
+        answered
+        <strong>07 Aug '14, 12:42</strong>
+    </p>
+    <img class="gravatar" width="32" height="32" src="./Data Structures and Algorithms - CodeChef Discuss_files/a14cb01086788d0c8b1112d9a530f7be.jpg" alt="ronakymca&#39;s gravatar image">
+    <p><a href="https://discuss.codechef.com/users/6641/ronakymca">ronakymca</a><br>
+    <span class="score" title="1105 karma"><span class="">1.1k</span></span><span title="3 badges"><span class="badge1">●</span><span class="badgecount">3</span></span><span title="12 badges"><span class="silver">●</span><span class="badgecount">12</span></span><span title="23 badges"><span class="bronze">●</span><span class="badgecount">23</span></span><br>
+    
+    <span title="Rate of the user&#39;s accepted answers" class="accept_rate">accept rate:</span>
+    <span title="ronakymca has 4 accepted answers">19%</span>
+    </p>
+</div>
+
+
+                                        </div>
+                                        
+
+
+<div class="comments-container" id="comments-container-49130">
+    
+</div>
+<div id="comment-tools-49130" class="comment-tools">
+    
+    
+</div>
+<div id="comment-49130-form-container" class="comment-form-container">
+    
+</div>
+    
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                    </div>
+                
+                <div class="paginator-container-left">
+                    <p class="paginator"><span class="curr this_page">1</span><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=2">2</a><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=3">3</a><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=4">4</a><a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=5">5</a>
+                
+            
+        
+    
+        
+          ...
+        
+    
+        
+            
+                
+                     <a class="page" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=8">8</a><span class="next"><a href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?sort=votes&page=2" title="next page">next »</a></span></p>
+                </div>
+            
+        <form id="fmanswer" action="https://discuss.codechef.com/questions/48877/answer/" method="post"><div style="display:none;"><input type="hidden" id="csrfmiddlewaretoken" name="csrfmiddlewaretoken" value="a0ea561dc9e7142a8d3b22dfc2715dec"></div>
+            <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="a0ea561dc9e7142a8d3b22dfc2715dec"></div>
+            <div style="clear:both">
+            </div>
+
+            
+                <div style="padding:10px 0 0 0;">
+                    
+                </div>
+                
+
+                <div id="description" class="">
+                    <div id="wmd-button-bar" class="wmd-panel"></div>
+                    <div class="resizable-textarea"><span><textarea rows="10" cols="40" name="text" id="editor" class="processed"></textarea><div class="grippie" style="margin-right: -6px;"></div></span></div>
+                    <div class="preview-toggle">
+                        <table width="100%">
+                            <tbody><tr>
+                                <td>
+                                    <span id="pre-collapse" title="Toggle the real time Markdown editor preview">[hide preview]</span>
+                                </td>
+                                <td style="text-align: right;" id="editor-metrics"></td>
+                                
+                                <td style="text-align:right;">
+                                    <input type="checkbox" name="wiki" id="id_wiki">
+                                    <span style="font-weight:normal;cursor:help" title="if you choose community wiki option, the question and answer do not generate points and name of author will not be shown">
+                                            <label for="id_wiki">community wiki</label> 
+                                    </span>
+                                </td>
+                                
+                            </tr>
+
+                        </tbody></table>
+                    </div>
+                    
+                    <div id="previewer" class="wmd-preview"></div>
+                </div>
+
+	            
+	            <div class="question-captcha" style="float: left;">
+	            	
+	            	<script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/challenge"></script><script type="text/javascript" src="./Data Structures and Algorithms - CodeChef Discuss_files/recaptcha.js"></script><div id="recaptcha_widget_div" class=" recaptcha_nothad_incorrect_sol recaptcha_isnot_showing_audio"><div id="recaptcha_area"><table id="recaptcha_table" class="recaptchatable recaptcha_theme_red"> <tbody><tr> <td colspan="6" class="recaptcha_r1_c1"></td> </tr> <tr> <td class="recaptcha_r2_c1"></td> <td colspan="4" class="recaptcha_image_cell"><center><div id="recaptcha_image" style="width: 300px; height: 57px;"><img id="recaptcha_challenge_image" alt="reCAPTCHA challenge image" height="57" width="300" src="./Data Structures and Algorithms - CodeChef Discuss_files/image"></div></center></td> <td class="recaptcha_r2_c2"></td> </tr> <tr> <td rowspan="6" class="recaptcha_r3_c1"></td> <td colspan="4" class="recaptcha_r3_c2"></td> <td rowspan="6" class="recaptcha_r3_c3"></td> </tr> <tr> <td rowspan="3" class="recaptcha_r4_c1" height="49"> <div class="recaptcha_input_area"> <span id="recaptcha_challenge_field_holder" style="display: none;"><input type="hidden" name="recaptcha_challenge_field" id="recaptcha_challenge_field" value="03AHJ_VusEL1s-DeRwsQRDGfZfiPHbdqjTm1NNb9Id2fnsFB-0HPAJ_VxxjivzF5C1_gxbGG5evAdafi1AkV-F9vw1u40B-V1N_br4qk7KHROreMKQPrt245UYg6FnZB-cMkwHxD1NBeZhmxaW-m1Cisdef5UEc4iLur3HojtaEgzhh2JskoobYrj_OKS9d6zE2I1ZL-r4fbbvqiBTXg5KRqJIdCo2JujOIyn_wzLLyokmnRZaIZ7qkzDYpldy3QLlZRt17-hVw_ndWczOpL1Kp5gZYasp4nFN4A"></span><input name="recaptcha_response_field" id="recaptcha_response_field" type="text" autocorrect="off" autocapitalize="off" placeholder="Type the text" autocomplete="off"> <span id="recaptcha_privacy" class="recaptcha_only_if_privacy"><a href="http://www.google.com/intl/en/policies/" target="_blank">Privacy &amp; Terms</a></span> </div> </td> <td rowspan="4" class="recaptcha_r4_c2"></td> <td><a id="recaptcha_reload_btn" title="Get a new challenge"><img id="recaptcha_reload" width="25" height="17" src="./Data Structures and Algorithms - CodeChef Discuss_files/refresh.gif" alt="Get a new challenge"></a></td> <td rowspan="4" class="recaptcha_r4_c4"></td> </tr> <tr> <td><a id="recaptcha_switch_audio_btn" class="recaptcha_only_if_image" title="Get an audio challenge"><img id="recaptcha_switch_audio" width="25" height="16" alt="Get an audio challenge" src="./Data Structures and Algorithms - CodeChef Discuss_files/audio.gif"></a><a id="recaptcha_switch_img_btn" class="recaptcha_only_if_audio" title="Get a visual challenge"><img id="recaptcha_switch_img" width="25" height="16" alt="Get a visual challenge" src="./Data Structures and Algorithms - CodeChef Discuss_files/text.gif"></a></td> </tr> <tr> <td><a id="recaptcha_whatsthis_btn" title="Help"><img id="recaptcha_whatsthis" width="25" height="16" src="./Data Structures and Algorithms - CodeChef Discuss_files/help.gif" alt="Help"></a></td> </tr> <tr> <td class="recaptcha_r7_c1"></td> <td class="recaptcha_r8_c1"></td> </tr> </tbody></table> </div></div>
+
+<noscript>
+  &lt;iframe src="https://www.google.com/recaptcha/api/noscript?k=6Ld28wYTAAAAAIAqh2vqc4dsCE3bz-oDorke5j4E" height="300" width="500" frameborder="0"&gt;&lt;/iframe&gt;&lt;br /&gt;
+  &lt;textarea name="recaptcha_challenge_field" rows="3" cols="40"&gt;&lt;/textarea&gt;
+  &lt;input type='hidden' name='recaptcha_response_field' value='manual_challenge' /&gt;
+</noscript>
+
+	            </div>
+	            <div class="clear"></div>
+	            
+
+                <p><span class="form-error"></span></p>
+                
+                <input type="button" disabled="disabled" value="Post Your Answer" class="submit" style="float:left" onclick="submitClicked(event, this.form)">
+            
+        </form>
+    </div>
+</div>
+
+
+        </div>
+        <div id="CARight">
+            
+<div class="boxC" id="subscription_box">
+    <h3 class="subtitle">Follow this question</h3><strong>By Email:</strong><p>Once you sign in you will be able to subscribe for any updates here</p><strong>By RSS:</strong><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?type=rss" title="subscribe to answers"></a>
+    Answers
+</p><p><a class="feed-icon" style="background-image:url(&#39;/m/default/media/images/feed-icon-small.png&#39;);" href="https://discuss.codechef.com/questions/48877/data-structures-and-algorithms?type=rss&comments=yes" title="subscribe to comments and answers"></a>
+    Answers and Comments
+</p>
+
+</div>
+
+
+<div class="boxC" id="editor_side_bar" style="display: none;">
+    <p class="subtitle darkred">Markdown Basics</p>
+    <ul class="list-item">
+        <li>
+            *italic* or _italic_
+        </li>
+        <li>
+			**bold** or __bold__
+        </li>
+        <li>
+            <b>link</b>:[text](http://url.com/ "title")
+
+        </li>
+
+        <li>
+            <b>image</b>?![alt text](/path/img.jpg "title")
+
+        </li>
+        <li>
+			numbered list:
+            1.  Foo
+            2.  Bar
+        </li>
+        <li>
+			to add a line break simply add two spaces to where you would like the new line to be.
+        </li>
+        <li>
+			basic HTML tags are also supported
+        </li>
+        <li>
+			mathemetical formulas in Latex between $ symbol
+        </li>
+    </ul>
+    <p class="info-box-follow-up-links">
+        <a href="https://discuss.codechef.com/markdown_help/" target="_blank">learn more about Markdown </a>
+    </p>
+</div>
+
+
+
+
+
+
+
+
+<div class="boxC">
+    <p>
+		Tags:
+    </p>
+    <p class="tags">
+        
+        	<a href="https://discuss.codechef.com/tags/algorithm/" class="tag-link-algorithm" title="see questions tagged&#39;algorithm&#39;using tags" rel="tag">algorithm</a> <span class="tag-number">×817</span><br>
+        
+        	<a href="https://discuss.codechef.com/tags/data-structure/" class="tag-link-data-structure" title="see questions tagged&#39;data-structure&#39;using tags" rel="tag">data-structure</a> <span class="tag-number">×569</span><br>
+        
+        	<a href="https://discuss.codechef.com/tags/datastructure/" class="tag-link-datastructure" title="see questions tagged&#39;datastructure&#39;using tags" rel="tag">datastructure</a> <span class="tag-number">×415</span><br>
+        
+        	<a href="https://discuss.codechef.com/tags/algorithms/" class="tag-link-algorithms" title="see questions tagged&#39;algorithms&#39;using tags" rel="tag">algorithms</a> <span class="tag-number">×408</span><br>
+        
+    </p>
+    <p>
+        Asked: <strong title="July 31, 2014, 11:29 p.m.">31 Jul '14, 23:29</strong>
+    </p>
+    <p>
+     	Seen: <strong>122,351 times</strong>
+    </p>
+    <p>
+        Last updated: <strong title="July 25, 2015, 12:12 a.m.">25 Jul, 00:12</strong>
+    </p>
+</div>
+
+
+
+
+
+<div class="boxC">
+    <h3 class="subtitle">Related questions</h3>
+    <div class="questions-related">
+
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/66045/algorithm-analysis" title="Link: https://www.youtube.com/watch?v=zWg7U0OEAoE&amp;amp;list=PLMwF3aGmp-CTiu8o3EU-qwdyXgtfxeTtiTime : 21:22Y is the for loop having n timesit is from this place https://www.youtube.com/watch?v=zWg7U0OEAoE&amp;amp;list=PLMwF3aGmp-CTiu8o3EU-qwdyXgtfxeTtiFirst Line...it says that fir">Algorithm Analysis</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/66044/machine-dependent-constants" title="What are Machine Dependent constants in asymptotic analysisLink : https://www.youtube.com/results?search_query=introduction+to+algorithms+mitTime :50:00.">Machine Dependent constants</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/69159/what-all-algorithms" title="I am not a beginner and i have been solving problems for quite sometime but now i want to be more good at competitive coding. Can anyone please suggest me what all algorithms and data structure i should go through.">What all algorithms?</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/59519/hackerearth-problem-little-deepu-and-array" title="Problem:An Array of positive elements. Deepu Wants to reduce the elements of the array. He calls a function Hit(X) which reduces the all the elements in the array which are greater than X by 1. he will call this array many times . Print the array after many calls to Hit(X).Input:n----- no of el">HackerEarth Problem- Little Deepu and Array</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/65979/best-data-structure-for-heap-implementation" title="Which is the best Data Structure for Heap implementation and Why ?">Best Data Structure for Heap implementation</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/72760/complete-cheet-sheet-for-data-structures" title="Where can i find a complete cheet sheet(Info about TIme and Space Complexity) for DS . I have seen this ---http://bigocheatsheet.com/#data-structuresbut unfortunately this too isn&#39;t complete . many ds are missing , where can i find a complete list for all DS like this ????If not complete atleast">Complete CHEET SHEET for Data Structures</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/43897/new-helper" title="Hello everyone!I have started writing blogs on data structures and algorithms.Please take a view of my first post:http://sanugupta.wordpress.com/2014/06/03/getting-started-with-linked-list/Guys I am trying to help others who are facing problems with logic and code.Follow my blog to be connected">new helper</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/2870/simple-data-structure" title="I haven&#39;t implemented data structures as of now on any of the codechef problems. can someone suggest me some questions that are available on codechef that are based on data structure i.e trees,undirected graphs,directed graphs,path matrix,shortest path algorithms...?The difficult of problems should">Simple Data Structure</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/67790/can-anyone-suggest-me-how-can-i-find-longest-chain-of-nodes" title="Can anyone suggest me how can i find longest chain of nodes in unweighted acyclic graph .It is also given that u can choose any node as a first node. ">Can anyone suggest me how can i find longest chain of nodes ?</a>
+        </p>
+        
+        <p>
+            <a href="https://discuss.codechef.com/questions/66021/spell-checking" title="operations like spell-checking where you need to find words similar to other wordsCan an operation like this be done using a TRIE ?">Spell Checking</a>
+        </p>
+        
+
+    </div>
+</div>
+
+
+
+        </div>
+        <div id="tail" style="clear:both;">
+            
+            
+        </div>
+    </div>
+    <div class="spacer3"></div>
+</div>
+
+        
+            
+            <div id="ground">
+                
+                    <p>
+
+<link rel="stylesheet" type="text/css" href="./Data Structures and Algorithms - CodeChef Discuss_files/cc.css">
+</p>
+<div id="cc-footer" class="cc-wrapper">
+    <div class="cc-inner-wrapper">
+        <!-- SECOND NAV -->
+        <div class="cc-cols-2">
+            <div id="cc-secondary-nav">
+                <ul>
+                    <!-- <li><a href="http://blog.corp.pw/" target="_blank">.pw Corp Blog</a></li>
+                    <li><a href="http://start.pw/" target="_blank">Vision</li> -->
+                    <li><a href="http://www.codechef.com/aboutus/">About CodeChef</a></li>
+                    <li><a href="http://www.directi.com/" target="_blank">About Directi</a></li>
+                    <li><a href="http://www.codechef.com/ceoscorner/">CEO's Corner</a></li>
+                    <!-- <li><a href="http://wiki.directi.com/" target="_blank">Wiki</a></li>
+                    <li><a href="http://wiki.directi.com/display/corp/Home" target="_blank">About</a></li> -->
+                </ul>
+                <ul>
+                    <li><a href="http://www.codechef.com/campus/">CodeChef Campus Chapters</a></li>
+                    <li><a href="http://www.codechef.com/school/">CodeChef For Schools</a></li>
+                    <li><a href="http://www.codechef.com/contactus">Contact Us</a></li>
+                </ul>
+            </div>
+            <div id="cc-fineprint">
+                <p>© 2009, Directi Group. All Rights Reserved.</p>
+                <p><small>Powered by OSQA<br> </small></p>
+            </div>
+        </div>
+        <!-- /SECOND NAV -->
+        <!-- LEGAL & COPYRIGHT -->
+        <div>
+            <div id="cc-sponsor-strip">
+                <a href="http://www.directi.com/" target="_blank"><img src="./Data Structures and Algorithms - CodeChef Discuss_files/footer-sponsor-strip.gif" alt="Sponsors" title="Sponsors"></a>
+            </div>
+        </div>
+        <!-- /LEGAL & COPYRIGHT -->
+    </div>
+</div>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="./Data Structures and Algorithms - CodeChef Discuss_files/ga.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-4090524-6");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- Start Alexa Certify Javascript -->
+
+<script type="text/javascript">
+_atrk_opts = { atrk_acct:"q16Cj1a8gN00iz", domain:"codechef.com",dynamic: true};
+(function() { var as = document.createElement('script'); as.type = 'text/javascript'; as.async = true; as.src = "https://d31qbv1cthcecs.cloudfront.net/atrk.js"; var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(as, s); })();
+</script>
+
+<noscript>&lt;img src="https://d5nxst8fruw4z.cloudfront.net/atrk.gif?account=q16Cj1a8gN00iz" style="display:none" height="1" width="1" alt="" /&gt;</noscript>
+
+<!-- End Alexa Certify Javascript -->
+                
+            </div>
+            
+        
+        
+
+        
+        </div><iframe src="about:blank" style="height: 0px; width: 0px; visibility: hidden; border: none; display: none;">This frame prevents back/forward cache problems in Safari.</iframe>
+
+        <!-- Put all elements with fixed position here, IE6 fixed position fix: http://ryanfait.com/position-fixed-ie6/ -->
+        <div class="notify" style="">
+            
+                
+            
+            <a id="close-notify" onclick="notify.close(true)">×</a>
+        </div>
+
+    
+
+<!-- end template base_content.html -->
+</body></html>

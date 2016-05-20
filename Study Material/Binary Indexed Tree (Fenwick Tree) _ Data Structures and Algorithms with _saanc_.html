@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<title>Binary Indexed Tree (Fenwick Tree) | Data Structures and Algorithms with "saanc"</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://sanugupta.wordpress.com/xmlrpc.php">
+<!--[if lt IE 9]>
+<script src="https://s0.wp.com/wp-content/themes/pub/ryu/js/html5.js" type="text/javascript"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="Data Structures and Algorithms with &quot;saanc&quot; » Feed" href="https://sanugupta.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="Data Structures and Algorithms with &quot;saanc&quot; » Comments Feed" href="https://sanugupta.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Data Structures and Algorithms with &quot;saanc&quot; » Binary Indexed Tree (Fenwick Tree) Comments Feed" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/feed/">
+<script type="text/javascript">
+/* <![CDATA[ */
+function addLoadEvent(func){var oldonload=window.onload;if(typeof window.onload!='function'){window.onload=func;}else{window.onload=function(){oldonload();func();}}}
+/* ]]> */
+</script>
+<link rel="stylesheet" id="all-css-0" href="https://s2.wp.com/_static/??-eJx9kFluxCAMQC9UakWpqvxUPQsQlyFjMMIglNsPadQlyig/yLbewwu0pCzHgrFAqCpRdT4KSPCEa8q8oC3H7NWKvMBzjfwdBRYsSdu7+s5OuCF2fwI7hzPXor6YiBs0Pzs89zhIjfOsZwFHbDRdzWM5Y6+HpMtGBJy9RsLQsSstpPcfawtvfZnzHv/4ljqtjEkZRVR/g69BlVtvdOl1axtlPxR08FjZVQ+Ri++2/AZXfzqMmHf8aXhy9zEhVQN5rSBlJdygz/AxvI3TOA7TMC0PVc3QVw==" type="text/css" media="all">
+<link rel="stylesheet" id="ryu-lato-css" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/css" type="text/css" media="all">
+<link rel="stylesheet" id="ryu-playfair-display-css" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/css(1)" type="text/css" media="all">
+<link rel="stylesheet" id="all-css-4" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-5" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-6" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(1)" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var LoggedOutFollow = {"invalid_email":"Your subscription did not succeed, please try again with a valid email address."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(2)"></script>
+<link rel="stylesheet" id="all-css-0" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s2.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563g&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://sanugupta.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="Hashing is good" href="https://sanugupta.wordpress.com/2014/06/22/hashing-is-good/">
+<link rel="next" title="Stack" href="https://sanugupta.wordpress.com/2015/01/05/stack/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc_.html">
+<link rel="shortlink" href="http://wp.me/p4f0Mm-2k">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=json&url=https%3A%2F%2Fsanugupta.wordpress.com%2F2014%2F08%2F29%2Fbinary-indexed-tree-fenwick-tree%2F&for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/1.0/?format=xml&url=https%3A%2F%2Fsanugupta.wordpress.com%2F2014%2F08%2F29%2Fbinary-indexed-tree-fenwick-tree%2F&for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="Binary Indexed Tree (Fenwick Tree)">
+<meta property="og:url" content="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/">
+<meta property="og:description" content="                          Introduction: Binary Indexed Tree (it will be called as BIT throughout this post) is an advanced data structure,is often used to store cumulative frequencies and manipulat...">
+<meta property="article:published_time" content="2014-08-29T07:53:28+00:00">
+<meta property="article:modified_time" content="2015-06-20T13:31:02+00:00">
+<meta property="og:site_name" content="Data Structures and Algorithms with &quot;saanc&quot;">
+<meta property="og:image" content="https://sanugupta.files.wordpress.com/2014/08/bit2-1.png?w=300">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@SANUKUMARGUPTA5">
+<meta name="twitter:image" content="https://sanugupta.files.wordpress.com/2014/08/bit2-1.png?w=240">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@SANUKUMARGUPTA5">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/31ae624e21a6459ea6ab8a3771ff6812?s=16" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/31ae624e21a6459ea6ab8a3771ff6812?s=16" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/8c3e97dfe11174f7e05f30e8d64c9064?s=114">
+<link rel="openid.server" href="https://sanugupta.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://sanugupta.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://sanugupta.wordpress.com/osd.xml" title="Data Structures and Algorithms with &quot;saanc&quot;">
+<link rel="search" type="application/opensearchdescription+xml" href="https://wordpress.com/opensearch.xml" title="WordPress.com">
+	<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style>
+		<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="Data Structures and Algorithms with &quot;saanc&quot;"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Explore yourself with my ideas :)"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://sanugupta.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/31ae624e21a6459ea6ab8a3771ff6812?s=16"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="Binary Indexed Tree (Fenwick Tree) | Data Structures and Algorithms with &quot;saanc&quot; on WordPress.com">
+<meta name="description" content="                          Introduction: Binary Indexed Tree (it will be called as BIT throughout this post) is an advanced data structure,is often used to store cumulative frequencies and manipulating cumulative frequency table. To understand this better, let&#39;s take an example: We have n boxes numbered…">
+		<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/amzn_ads.js"></script>
+		<script type="text/javascript">
+		try { amznads.getAds("3033"); } catch(e) { /* ignore */ }
+		</script><script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/bid"></script>
+		<script type="text/javascript">
+		var a9_p = amznads.getKeys(),
+		_ipw_custom = {
+			wordAds: '0',
+			adSafe: '0',
+			domain: 'sanugupta.wordpress.com',
+			pageURL: 'https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/'
+		};
+		if("undefined"!=typeof a9_p&&""!=a9_p&&null!==a9_p&&"[object Array]"===Object.prototype.toString.call(a9_p)){var a="",b=0,c=a9_p.length;a9_p.sort();for(var d=0;d<c;d++){a9_p[d-b]=a9_p[d-b].replace(/a1x6p/,"a160x600p");var e=a9_p[d-b].split("p");e[0]==a&&(a9_p.splice(d-b,1),b++);a=e[0]}_ipw_custom.amznPay=a9_p};document.close();
+		</script>		<!-- IPONWEB header script -->
+		<script type="text/javascript">
+			window.__ATA = {
+				scriptSrc: '//s.pubmine.com/showad.js',
+				slotPrefix: 'automattic-id-',
+				isSync: true,
+				initAd: function(o) {
+					var o = o || {},
+						g = window,
+						d = g.document,
+						wr = d.write,
+						id = g.__ATA.id();
+					wr.call(d, '<div id="' + id + '" data-section="' + (o.sectionId || 0) + '"' + (o.type ? ('data-type="' + o.type + '"') : '') + ' ' + (o.forcedUrl ? ('data-forcedurl="' + o.forcedUrl + '"') : '') + ' style="width:' + (o.width || 0) + 'px; height:' + (o.height || 0) + 'px;">');
+					g.__ATA.displayAd(id);
+					wr.call(d, '</div>');
+				},
+				displayAd: function(id) {
+					window.__ATA.ids = window.__ATA.ids || {};
+					window.__ATA.ids[id] = 1;
+				},
+				customParams: _ipw_custom,
+				id: function() {
+					return window.__ATA.slotPrefix + (parseInt(Math.random() * 10000, 10) + 1 + (new Date()).getMilliseconds());
+				}
+			};
+
+			// including ad delivery script
+			(function(g, d, ata, sync) {
+				var pr = "https:" === d.location.protocol ? "https:" : "http:",
+					src = pr + ata.scriptSrc,
+					st = "text/javascript";
+				(sync === true) ? d.write('<scr' + 'ipt type="' + st + '" src="' + src + '"><\/scr' + 'ipt>'): inj(src, st);
+
+				function inj(url, st) {
+					var s = d.createElement("script"),
+						n = d.getElementsByTagName("script")[0],
+						p = n.parentNode,
+						ib = p.insertBefore;
+					s.type = st;
+					s.src = url;
+					s.async = true;
+					(navigator.userAgent.indexOf("Opera") !== -1) ? setTimeout(function() {
+						ib.call(p, s, n);
+					}, 0): ib.call(p, s, n);
+				}
+			})(window, window.document, window.__ATA, window.__ATA.isSync);
+		</script><script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/showad.js"></script>
+		<script type="text/javascript">
+		jQuery(window).ready(function () {
+			jQuery("a.wpa-about").text("About these ads");
+		});
+		</script><link rel="stylesheet" type="text/css" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/shCore.css"><link rel="stylesheet" type="text/css" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/ga.js"></script>
+<script charset="utf-8" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/rate.php"></script><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/services.css"><style type="text/css" id="pd_popup_holder_style_7658321_post_144">#pd_popup_holder_7658321_post_144 { position:absolute; display:none; width:350px; height:auto; top:0px; left:0px; z-index:10000; border:solid 1px #CCC; background-color:white; padding:0px 15px;font-family:Arial,Sans;box-shadow: -10px 10px 20px rgba(0, 0, 0, .5);-webkit-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25);-moz-box-shadow: 0px 0px 6px rgba(0, 0, 0, .25); }</style></head>
+
+<body class="single single-post postid-144 single-format-standard mp6 customizer-styles-applied highlander-enabled highlander-light">
+
+
+<div id="page" class="hfeed site">
+		<div id="widgets-wrapper" class="toppanel hide">
+		<div id="secondary" role="complementary" class="wrap clear four">
+		<div id="top-sidebar-one" class="widget-area" role="complementary">
+				<aside id="recent-posts-4" class="widget widget_recent_entries">		<h1 class="widget-title">Recent Posts</h1>		<ul>
+					<li>
+				<a href="https://sanugupta.wordpress.com/2015/01/05/stack/">Stack</a>
+						</li>
+					<li>
+				<a href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc_.html">Binary Indexed Tree (Fenwick Tree)</a>
+						</li>
+					<li>
+				<a href="https://sanugupta.wordpress.com/2014/06/22/hashing-is-good/">Hashing is good</a>
+						</li>
+					<li>
+				<a href="https://sanugupta.wordpress.com/2014/06/22/best-example-of-hashing-counting-sort/">Best example of hashing: Counting Sort</a>
+						</li>
+					<li>
+				<a href="https://sanugupta.wordpress.com/2014/06/05/linear-search-vs-binary-search/">Linear Search Vs Binary Search</a>
+						</li>
+				</ul>
+		</aside><aside id="recent-comments-7" class="widget widget_recent_comments"><h1 class="widget-title">Recent Comments</h1>				<ul id="recentcomments">
+											<li class="recentcomments">
+							<a href="https://iitkgpsam.wordpress.com/2015/07/27/getting-started-with-competitive-coding/" rel="external nofollow" class="url">Getting started with competitive coding | Sameer Chaudhari</a> on <a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-52">Binary Indexed Tree (Fenwick Tree)</a>						</li>
+
+												<li class="recentcomments">
+							<a href="https://sanugupta.wordpress.com/" rel="external nofollow" class="url">Sanu Kumar Gupta</a> on <a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-51">Binary Indexed Tree (Fenwick Tree)</a>						</li>
+
+												<li class="recentcomments">
+							Anonymous on <a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-50">Binary Indexed Tree (Fenwick Tree)</a>						</li>
+
+										</ul>
+				</aside>	</div><!-- #first .widget-area -->
+	
+		<div id="top-sidebar-two" class="widget-area" role="complementary">
+		<aside id="tag_cloud-4" class="widget widget_tag_cloud"><h1 class="widget-title">Category Cloud</h1><div style="overflow: hidden;"><a href="https://sanugupta.wordpress.com/category/advanced-data-structures/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Advanced Data Structures (1)">Advanced Data Structures</a> <a href="https://sanugupta.wordpress.com/category/basic-data-structures/" style="font-size: 275%; padding: 1px; margin: 1px;" title="Basic Data Structures (3)">Basic Data Structures</a> <a href="https://sanugupta.wordpress.com/category/algorithms/searching-algorithms/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Searching Algorithms (1)">Searching Algorithms</a> <a href="https://sanugupta.wordpress.com/category/algorithms/sorting-algorithms/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Sorting Algorithms (1)">Sorting Algorithms</a> <a href="https://sanugupta.wordpress.com/category/stl/" style="font-size: 100%; padding: 1px; margin: 1px;" title="STL (1)">STL</a> <a href="https://sanugupta.wordpress.com/category/uncategorized/" style="font-size: 100%; padding: 1px; margin: 1px;" title="Uncategorized (1)">Uncategorized</a> </div></aside><aside id="wp_tag_cloud-4" class="widget wp_widget_tag_cloud"><h1 class="widget-title">Tags</h1><div style="overflow:hidden"><a href="https://sanugupta.wordpress.com/tag/binary-indexed-tree/" class="tag-link-28392713" title="1 topic" style="font-size: 8pt;">Binary Indexed Tree</a>
+<a href="https://sanugupta.wordpress.com/tag/c/" class="tag-link-2426" title="1 topic" style="font-size: 8pt;">c++</a>
+<a href="https://sanugupta.wordpress.com/tag/cumulative-sum/" class="tag-link-62816469" title="1 topic" style="font-size: 8pt;">cumulative sum</a>
+<a href="https://sanugupta.wordpress.com/tag/data-structures/" class="tag-link-37687" title="2 topics" style="font-size: 22pt;">Data Structures</a>
+<a href="https://sanugupta.wordpress.com/tag/fenwick-tree/" class="tag-link-127330270" title="1 topic" style="font-size: 8pt;">Fenwick tree</a>
+<a href="https://sanugupta.wordpress.com/tag/my_1st_one/" class="tag-link-239002401" title="1 topic" style="font-size: 8pt;">my_1st_one</a>
+<a href="https://sanugupta.wordpress.com/tag/stack/" class="tag-link-251553" title="1 topic" style="font-size: 8pt;">stack</a>
+<a href="https://sanugupta.wordpress.com/tag/stl-2/" class="tag-link-18308210" title="1 topic" style="font-size: 8pt;">stl</a></div></aside>	</div><!-- #second .widget-area -->
+	
+		<div id="top-sidebar-three" class="widget-area" role="complementary">
+		<aside id="blog_subscription-3" class="widget widget_blog_subscription"><h1 class="widget-title"><label for="subscribe-field">Follow Blog via Email</label></h1>
+				<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>Enter your email address to follow this blog and receive notifications of new posts by email.</p>
+<p>Join 843 other followers</p>
+						<p><input type="text" name="email" style="width: 95%; padding: 1px 2px" placeholder="Enter your email address" value="" id="subscribe-field"></p>
+					
+					<p>
+						<input type="hidden" name="action" value="subscribe">
+						<input type="hidden" name="blog_id" value="62683262">
+						<input type="hidden" name="source" value="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/">
+						<input type="hidden" name="sub-type" value="widget">
+						<input type="hidden" name="redirect_fragment" value="blog_subscription-3">
+						<input type="hidden" id="_wpnonce" name="_wpnonce" value="08ebe2ec75">						<input type="submit" value="Follow">
+					</p>
+				</form>
+			
+</aside><aside id="authors-5" class="widget widget_authors"><h1 class="widget-title">Authors</h1><ul><li><a href="https://sanugupta.wordpress.com/author/sanukumargupta/"> <img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/57f6ba961df97422a71ee7acb0b26766" class="avatar avatar-48 grav-hashed" height="48" width="48" id="grav-57f6ba961df97422a71ee7acb0b26766-0"> <strong>Sanu Kumar Gupta</strong></a></li></ul></aside>	</div><!-- #third .widget-area -->
+	
+		<div id="top-sidebar-four" class="widget-area" role="complementary">
+		<aside id="archives-7" class="widget widget_archive"><h1 class="widget-title">Archives</h1>		<ul>
+	<li><a href="https://sanugupta.wordpress.com/2015/01/">January 2015</a></li>
+	<li><a href="https://sanugupta.wordpress.com/2014/08/">August 2014</a></li>
+	<li><a href="https://sanugupta.wordpress.com/2014/06/">June 2014</a></li>
+		</ul>
+</aside><aside id="blog-stats-8" class="widget widget_blog-stats"><h1 class="widget-title">Hits</h1>		<ul>
+			<li>9,582 hits</li>
+		</ul>
+		</aside>	</div><!-- #four .widget-area -->
+	</div><!-- #secondary -->	</div>
+	
+		<div id="social-links-wrapper" class="toppanel hide">
+		<ul class="social-links clear">
+						<li class="email-link">
+				<a href="mailto:sanukumargupta@gmail.com" class="theme-genericon" title="Email" target="_blank">
+					<span class="screen-reader-text">Email</span>
+				</a>
+			</li>
+			
+						<li class="twitter-link">
+				<a href="https://twitter.com/SANUKUMARGUPTA5" class="theme-genericon" title="Twitter" target="_blank">
+					<span class="screen-reader-text">Twitter</span>
+				</a>
+			</li>
+			
+						<li class="facebook-link">
+				<a href="http://www.facebook.com/ssanukumar" class="theme-genericon" title="Facebook" target="_blank">
+					<span class="screen-reader-text">Facebook</span>
+				</a>
+			</li>
+			
+			
+						<li class="google-link">
+				<a href="https://plus.google.com/+SanuKumarGupta_saanc/posts" class="theme-genericon" title="Google Plus" target="_blank">
+					<span class="screen-reader-text">Google Plus</span>
+				</a>
+			</li>
+			
+						<li class="linkedin-link">
+				<a href="https://www.linkedin.com/profile/view?id=83569316&trk=nav_responsive_tab_profile_pic" class="theme-genericon" title="LinkedIn" target="_blank">
+					<span class="screen-reader-text">LinkedIn</span>
+				</a>
+			</li>
+			
+			
+						<li class="github-link">
+				<a href="https://github.com/saanc" class="theme-genericon" title="Github" target="_blank">
+					<span class="screen-reader-text">Github</span>
+				</a>
+			</li>
+			
+			
+			
+			
+					</ul>
+	</div>
+	
+	<div id="search-wrapper" class="toppanel hide">
+		
+<form method="get" id="searchform" class="searchform" action="https://sanugupta.wordpress.com/" role="search">
+	<label for="s" class="screen-reader-text">Search</label>
+	<input type="search" class="field" name="s" value="" id="s" placeholder="Search …">
+	<input type="submit" class="submit" id="searchsubmit" value="Search">
+</form>	</div>
+
+	<div id="triggers-wrapper">
+		<ul class="triggers clear">
+						<li class="widgets-trigger">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" class="theme-genericon" title="Widgets">
+					<span class="screen-reader-text">Widgets</span>
+				</a>
+			</li>
+			
+						<li class="social-links-trigger">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" class="theme-genericon" title="Connect">
+					<span class="screen-reader-text">Connect</span>
+				</a>
+			</li>
+			
+			<li class="search-trigger">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" class="theme-genericon" title="Search">
+					<span class="screen-reader-text">Search</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<header id="masthead" class="site-header" role="banner">
+		<div class="wrap">
+			
+							<a class="site-logo" href="https://sanugupta.wordpress.com/" title="Data Structures and Algorithms with &quot;saanc&quot;" rel="home">
+					<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(3)" width="120" height="120" alt="" class="no-grav header-image">
+				</a>
+			
+			<hgroup>
+				<h1 class="site-title"><a href="https://sanugupta.wordpress.com/" title="Data Structures and Algorithms with &quot;saanc&quot;" rel="home">Data Structures and Algorithms with "saanc"</a></h1>
+				<h2 class="site-description">Explore yourself with my ideas :)</h2>
+			</hgroup>
+		</div><!-- .wrap -->
+
+					<nav id="site-navigation" class="navigation-main clear" role="navigation">
+				<h1 class="menu-toggle">Menu</h1>
+				<div class="screen-reader-text skip-link"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#content" title="Skip to content">Skip to content</a></div>
+
+				<div class="wrap"><ul id="menu-menu" class="menu"><li id="menu-item-195" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-195"><a href="https://sanugupta.wordpress.com/">Home</a></li>
+<li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="https://sanugupta.wordpress.com/about-me/">About me</a></li>
+</ul></div>			</nav><!-- #site-navigation -->
+			</header><!-- #masthead -->
+
+	<div id="main" class="site-main">
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+		
+			
+<article id="post-144" class="clear post-144 post type-post status-publish format-standard hentry category-advanced-data-structures tag-binary-indexed-tree tag-cumulative-sum tag-data-structures tag-fenwick-tree">
+	<div class="entry-wrap wrap clear">
+		
+		<header class="entry-header">
+			<span class="categories-links"><a href="https://sanugupta.wordpress.com/category/advanced-data-structures/" rel="category tag">Advanced Data Structures</a></span><h1 class="entry-title">Binary Indexed Tree (Fenwick Tree)</h1>		</header><!-- .entry-header -->
+
+		<footer class="entry-meta">
+			<span class="entry-date"><a href="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc_.html" title="1:23 pm" rel="bookmark"><time datetime="2014-08-29T13:23:28+00:00">August 29, 2014</time></a></span><span class="author vcard"><a class="url fn n" href="https://sanugupta.wordpress.com/author/sanukumargupta/" title="View all posts by Sanu Kumar Gupta" rel="author">Sanu Kumar Gupta</a></span><span class="tags-links"><a href="https://sanugupta.wordpress.com/tag/binary-indexed-tree/" rel="tag">Binary Indexed Tree</a>, <a href="https://sanugupta.wordpress.com/tag/cumulative-sum/" rel="tag">cumulative sum</a>, <a href="https://sanugupta.wordpress.com/tag/data-structures/" rel="tag">Data Structures</a>, <a href="https://sanugupta.wordpress.com/tag/fenwick-tree/" rel="tag">Fenwick tree</a></span>
+						<span class="comments-link"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#comments">9 Comments</a></span>
+			
+					</footer><!-- .entry-meta -->
+
+				<div class="entry-content clear">
+			<h2>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="https://sanugupta.files.wordpress.com/2014/08/bit2-1.png"><img class="alignnone  wp-image-165" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/bit2-1.png" alt="BIT2-1" width="529" height="171"></a></h2>
+<h2>Introduction:</h2>
+<p>Binary Indexed Tree (it will be called as <span style="color:#ff0000;"><strong>BIT</strong></span> <span style="color:#000000;">throughout</span> this post) is an advanced data structure,is often used to store cumulative frequencies and manipulating cumulative frequency table. To understand this better, let’s take an example:</p>
+<h4>We have n boxes numbered from 1 to n.Then the possible queries are:</h4>
+<h4>1.Put a marble into <strong>i</strong>th box.</h4>
+<h4>2.sum marbles from box l to box r.</h4>
+<p>Considering the basic approach we can solve both the queries with worst case complexities O(1) and O(n) respectively.But suppose if there are m numbers of query-2 then it will take O(m.n)<b>.</b> If we do some effort then we can solve both the queries with worst case complexities O(log n) and O(log n) using <strong>Segment tree</strong>. Same thing can be done using Binary indexed tree with O(logn) and O(logn) complexities. So why one should learn BIT ? There are many reasons for that:</p>
+<p>1.Uses less memory than RMQ.</p>
+<p>2.Easy to code.</p>
+<p>3.Could be used in many problems about number sequence.</p>
+<p>The only disadvantage is that it is hard to understand (Don’t worry this statement would be considered as a false statement at the end of this post <span class="wp-smiley wp-emoji wp-emoji-bigsmile" title=":D">:D</span> ).</p>
+<h2></h2>
+<h2>Basic Idea:</h2>
+<p>We know that we can represent any number as a sum of powers of 2.</p>
+<p>example: &nbsp;22 = &nbsp;16 &nbsp; &nbsp; &nbsp; + &nbsp; &nbsp; &nbsp; &nbsp;4 &nbsp; &nbsp; &nbsp; &nbsp; + &nbsp; &nbsp; &nbsp;2 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [ 2^4 &nbsp; &nbsp; + &nbsp; &nbsp; &nbsp;2^2 &nbsp; &nbsp; &nbsp; + &nbsp; &nbsp;2^1 ]</p>
+<p>applying this idea to BIT we are going to express the sum of box[1]…..box[r] as sum of some blocks each of them having 2^k elements. Didn’t get it ? Don’t worry …journey starts from the next line.</p>
+<h2>Prerequisites:</h2>
+<p>You need some basic understanding of bitwise operations.Suppose there is a number x.</p>
+<p>Think of the statement <strong>x&amp;(-x) .</strong> It will give you the number generated by taking last occurring 1 with all the following 0’s in base 2 representation of the number x.</p>
+<p>example: suppose x=20. Its binary representation will be 10<strong>100</strong>. x&amp;(-x) will give you 100 ie 4.</p>
+<p>Attention! So basically above example means that sum of box[1]….box[20] can be divided as sum of box[1]….box[16] +sum of box[17]….box[20] (as 20-16=4). So at this instant we want that BIT[16] to store cumulative sum from 1 to 16 and BIT[20] to store cumulative sum from 17 to 20 .</p>
+<p>If we take x=22.Then sum of box[1]….box[22] will be divided into box[22]….box[21] +box[20]….box[17]+box[16]….box[1].So here we want that- BIT[22]=box[22]….box[21] BIT[20]=box[20]….box[17] BIT[16]=box[16]….box[1]</p>
+<p>To get the positions of the array do this: i=x; &nbsp;i=i- (i&amp;-i);</p>
+<p>22 – (22 &amp; (-22)) = 20</p>
+<p>20 – (20 &amp; (-20))= 16</p>
+<p>16 – (16 &amp; (-16))= 0</p>
+<p>See the only image attached in this post and I am sure you visualize the concept.</p>
+<p>All things could be done using this simple code(assuming queries and storing of elements in given array are 0-based):</p>
+<h3>Code to intialize BIT[] :</h3>
+<div><div id="highlighter_688344" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp color1 bold">int</code> <code class="cpp plain">BIT[100000];</code></div><div class="line number2 index1 alt1"><code class="cpp keyword bold">void</code> <code class="cpp plain">initializeBIT(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">box[],</code><code class="cpp color1 bold">int</code> <code class="cpp plain">n)</code><code class="cpp comments">//Array box[] is the given array.n is the size of the array</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">{</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp color1 bold">int</code> <code class="cpp plain">i,k;</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp functions bold">memset</code><code class="cpp plain">(BIT,0,</code><code class="cpp keyword bold">sizeof</code><code class="cpp plain">(BIT)); </code><code class="cpp comments">//setting all elements to 0</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</code><code class="cpp keyword bold">for</code><code class="cpp plain">(i=1;i&lt;=n;i++)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </code><code class="cpp comments">//main loop</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp;</code><code class="cpp plain">{</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">value_to_be_added =box[i-1];</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp plain">k=i;</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp keyword bold">while</code><code class="cpp plain">(k&lt;=n)</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp plain">{</code></div><div class="line number12 index11 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </code><code class="cpp plain">BIT[k] +=value_to_be_added;&nbsp; </code><code class="cpp comments">//adding box[i-1] to all desired positions</code></div><div class="line number13 index12 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </code><code class="cpp plain">k +=(k &amp; (-k));</code></div><div class="line number14 index13 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp plain">}</code></div><div class="line number15 index14 alt2">&nbsp;</div><div class="line number16 index15 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; </code><code class="cpp plain">}</code></div><div class="line number17 index16 alt2">&nbsp;</div><div class="line number18 index17 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<h3>Code For Query-2:</h3>
+<address>
+<div><div id="highlighter_915454" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp color1 bold">int</code> <code class="cpp plain">query(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">R,</code><code class="cpp color1 bold">int</code> <code class="cpp plain">n)</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">{</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp color1 bold">int</code> <code class="cpp plain">ans=0;</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp color1 bold">int</code> <code class="cpp plain">index_till =R+1;&nbsp; </code><code class="cpp comments">//here R+1 is used because query is 0-based and BIT is 1-based</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp keyword bold">while</code><code class="cpp plain">(index_till &gt;0)</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp plain">{</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp plain">ans +=BIT[index_till];&nbsp; </code><code class="cpp comments">//Pulling segments to build answer</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</code><code class="cpp plain">index_till-=(index_till &amp; (-index_till));</code><code class="cpp comments">//getting the next desired array index</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp plain">}</code></div><div class="line number10 index9 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; </code><code class="cpp keyword bold">return</code> <code class="cpp plain">ans;</code></div><div class="line number11 index10 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+</address>
+<address>&nbsp;</address>
+<h3>Code for Query-1:</h3>
+<address>
+<div><div id="highlighter_771803" class="syntaxhighlighter  cpp"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp keyword bold">void</code> <code class="cpp plain">update(</code><code class="cpp color1 bold">int</code> <code class="cpp plain">index,</code><code class="cpp color1 bold">int</code> <code class="cpp plain">value,</code><code class="cpp color1 bold">int</code> <code class="cpp plain">n)</code></div><div class="line number2 index1 alt1"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">{</code></div><div class="line number3 index2 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp color1 bold">int</code> <code class="cpp plain">index_to_modify = index+1; </code><code class="cpp comments">//same reason,query is 0-based</code></div><div class="line number4 index3 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp keyword bold">while</code><code class="cpp plain">(index_to_modify &lt;=n)</code></div><div class="line number5 index4 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">{</code></div><div class="line number6 index5 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">BIT[index_to_modify] +=value; </code><code class="cpp comments">//modifying all the necessary locations</code></div><div class="line number7 index6 alt2"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">index_to_modify += (index_to_modify &amp; (-index_to_modify));</code></div><div class="line number8 index7 alt1"><code class="cpp spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="cpp plain">}</code></div><div class="line number9 index8 alt2"><code class="cpp spaces">&nbsp;</code><code class="cpp plain">}</code></div></div></td></tr></tbody></table></div></div>
+<p>Please try your hands on it with a simple example.Do it on paper and you will understand what is happening <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span></p></address>
+<p>Take a visualization of Binary Indexed Tree: <a href="http://www.comp.nus.edu.sg/~stevenha/visualization/bit.html" target="_blank">Click Here</a></p>
+<p>Got the idea? Great <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span> Now solve the following problems:</p>
+<h2>Problems:</h2>
+<p><a href="http://www.spoj.com/problems/INVCNT/" target="_blank">Inversion count-spoj</a></p>
+<p><a href="http://www.spoj.com/problems/YODANESS" target="_blank">Yodaness-spoj</a></p>
+<p><a href="http://www.spoj.com/problems/INCSEQ/" target="_blank">Increasing subsequences-spoj</a></p>
+<p><a href="http://www.spoj.com/problems/HORRIBLE/" target="_blank">Horrible queries-spoj</a></p>
+<p><a href="http://www.codeforces.com/problemset/problem/276/C" target="_blank">Little Girl and Maximum Sum-codeforces</a></p>
+<p><a href="http://www.spoj.com/problems/CTRICK" target="_blank">Ctrick-spoj</a></p>
+<h2>References:</h2>
+<p><a href="http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=binaryIndexedTrees" target="_blank">Topcoder</a>, <a href="http://www.quora.com/CodeChef/What-are-some-suggestions-for-problems-where-Binary-Indexed-Tree-BIT-Fenwick-Tree-is-the-primary-concept" target="_blank">quora</a>, <a href="http://www.ahmed-aly.com/Category.jsp?ID=26" target="_blank">ahmed-aly</a>, <a href="http://codeforces.com/blog/entry/619" target="_blank">gvikei’s blog</a>,<a href="http://www.comp.nus.edu.sg/~stevenha/visualization/bit.html" target="_blank">VisuAlgo</a>. Follow my blog for further posts(click on the right<span style="color:#00ff00;"> “+follow”</span> symbol &nbsp;:)</p>
+		<div class="wpcnt">
+			<div class="wpa wpmrec">
+				<a class="wpa-about" href="https://wordpress.com/about-these-ads/" rel="nofollow">About these ads</a>
+				<div class="u">
+					<script type="text/javascript">
+					(function(g){g.__ATA.initAd({sectionId:26942, width:300, height:250});})(window);
+					</script><div id="automattic-id-1386" data-section="26942" style="width:300px; height:250px;"><script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(4)"></script><script src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(5)"></script><a href="http://pr.ybp.yahoo.com/cj/cd/jIeAaiHsiVko31GDOtcDED7dG1s2-6j99XOOnSLgeQNt8xl6thiV1AYIRxbiIMFoUN_eva2ka95RXa96a2Wi04TFKOUPPQq5FVVVS_xJ56cpWvLiAWUYWgWG_fEFDwDE/rurl/https://bs.serving-sys.com/BurstingPipe/adServer.bs?cn=tf&c=20&mc=click&pli=14440818&PluID=0&ord=9150490941191067974" target="_blank"><img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/01df0486-35da-4e6d-bf79-b733fd7ad4cb6623206616653394007.tmp" border="0" width="300" height="250" alt="advertisement"></a><script type="text/x-vi" id="x_vi_di1" data-ad-width="%AdWidth%" data-ad-height="%AdHeight%">https://beap-bc.yahoo.com/yv?sek=2324449080748542721:1440097154249&as=YAMPViewableImpressionPayload&av=0.1.0&ap=AgJwAvSjAgKm1QMCkPkMAu7SRwLW6xoCGndvcmRwcmVzcy5jb20C-IgdAgACyAUC0BQCwp8EAgECAQI8AgICBgIAAi53b3JkcHJlc3MuY29tL3NhbnVndXB0YQIAAqjT3w4CAAK65QUCAgIGAviIHQKo098OAgACAAK65QUCBg&iv=%InViewPercentage%&v=%Viewable%&m=%MeasurementType%&r=%Timestamp%</script><script src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/inside.js"></script><img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/sync" alt=" " style="display:none">
+<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/sync(1)" alt=" " style="display:none">
+</div>
+				</div>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-rating-enabled sd-like-enabled sd-sharing-enabled"><div class="sd-block sd-rating"><h3 class="sd-title">Rate this:</h3><div class="pd-rating" id="pd_rating_holder_7658321_post_144" style="display: inline-block;"><div class="rating-icons" id="pd_rate_7658321_post_144" style="float:left;"><div class="rating-star-icon" onmouseout="PDRTJS_7658321_post_144.rebuild();" onclick="PDRTJS_7658321_post_144.rate(1);" onmouseover="PDRTJS_7658321_post_144.hover(1);" id="PDRTJS_7658321_post_144_stars_1" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(https://polldaddy.com/images/ratings/star-yellow-sml.png) top left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_7658321_post_144.rebuild();" onclick="PDRTJS_7658321_post_144.rate(2);" onmouseover="PDRTJS_7658321_post_144.hover(2);" id="PDRTJS_7658321_post_144_stars_2" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(https://polldaddy.com/images/ratings/star-yellow-sml.png) top left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_7658321_post_144.rebuild();" onclick="PDRTJS_7658321_post_144.rate(3);" onmouseover="PDRTJS_7658321_post_144.hover(3);" id="PDRTJS_7658321_post_144_stars_3" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(https://polldaddy.com/images/ratings/star-yellow-sml.png) top left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_7658321_post_144.rebuild();" onclick="PDRTJS_7658321_post_144.rate(4);" onmouseover="PDRTJS_7658321_post_144.hover(4);" id="PDRTJS_7658321_post_144_stars_4" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(https://polldaddy.com/images/ratings/star-yellow-sml.png) top left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div><div class="rating-star-icon" onmouseout="PDRTJS_7658321_post_144.rebuild();" onclick="PDRTJS_7658321_post_144.rate(5);" onmouseover="PDRTJS_7658321_post_144.hover(5);" id="PDRTJS_7658321_post_144_stars_5" style="background-size: 32px 48px !important; cursor: pointer; width: 16px; height: 16px; line-height: 16px; background: url(https://polldaddy.com/images/ratings/star-yellow-sml.png) center left; float: left; padding: 0px; margin: 0px; margin-right: 1px;">&nbsp;</div></div><span style="float:left;">&nbsp;</span><div id="rating_info_7658321_post_144" style="display:block;float:left;background:url(https://polldaddy.com/images/ratings/info.png) no-repeat 3px 2px;width:16px;height:16px;cursor:pointer; null " onclick="javascript:PDRTJS_7658321_post_144.togglePopup();return false;"><span style="display:none;">i</span></div><div class="pd_popup_holder" id="pd_popup_holder_7658321_post_144">&nbsp;</div><div class="rating-msg" id="PDRTJS_7658321_post_144_msg" style="float:left; padding-left: 5px; text-align: left; font:normal normal /16px ; color: ##0;">5 Votes</div><p style="padding: 0px; margin: 0px; clear: both;"></p></div></div><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-print"><a rel="nofollow" data-shared="" class="share-print sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#print" target="_blank" title="Click to print"><span>Print</span></a></li><li class="share-google-plus-1"><a rel="nofollow" data-shared="sharing-google-144" class="share-google-plus-1 sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=google-plus-1&nb=1" target="_blank" title="Click to share on Google+"><span>Google</span></a></li><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-144" class="share-twitter sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=twitter&nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-144" class="share-facebook sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=facebook&nb=1" target="_blank" title="Share on Facebook"><span>Facebook</span></a></li><li class="share-email share-service-visible"><a rel="nofollow" data-shared="" class="share-email sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=email&nb=1" target="_blank" title="Click to email this to a friend"><span>Email</span></a></li><li class="share-tumblr"><a rel="nofollow" data-shared="" class="share-tumblr sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=tumblr&nb=1" target="_blank" title="Click to share on Tumblr"><span>Tumblr</span></a></li><li class="share-pinterest"><a rel="nofollow" data-shared="sharing-pinterest-144" class="share-pinterest sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=pinterest&nb=1" target="_blank" title="Click to share on Pinterest"><span>Pinterest</span></a></li><li class="share-linkedin"><a rel="nofollow" data-shared="sharing-linkedin-144" class="share-linkedin sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=linkedin&nb=1" target="_blank" title="Click to share on LinkedIn"><span>LinkedIn</span></a></li><li class="share-reddit"><a rel="nofollow" data-shared="" class="share-reddit sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=reddit&nb=1" target="_blank" title="Click to share on Reddit"><span>Reddit</span></a></li><li class="share-pocket"><a rel="nofollow" data-shared="" class="share-pocket sd-button share-icon" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?share=pocket&nb=1" target="_blank" title="Click to share on Pocket"><span>Pocket</span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-62683262-144-55d6237940a8f" data-src="//widgets.wp.com/likes/#blog_id=62683262&amp;post_id=144&amp;origin=sanugupta.wordpress.com&amp;obj_id=62683262-144-55d6237940a8f" data-name="like-post-frame-62683262-144-55d6237940a8f"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-62683262-144-55d6237940a8f" height="55px" width="100%" frameborder="0" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(12).html"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div></div>					</div><!-- .entry-content -->
+		
+		<span class="entry-format-badge theme-genericon"><span class="screen-reader-text">Standard</span></span>
+	</div><!-- .entry-wrap -->
+</article><!-- #post-## -->
+				<nav role="navigation" id="nav-below" class="navigation-post double">
+		<div class="wrap clear">
+			<h1 class="screen-reader-text">Post navigation</h1>
+
+		
+			<div class="next"><a href="https://sanugupta.wordpress.com/2015/01/05/stack/" rel="next"><span class="meta-nav">→</span> <span class="text-nav">Stack</span></a></div>
+			<div class="previous"><a href="https://sanugupta.wordpress.com/2014/06/22/hashing-is-good/" rel="prev"><span class="meta-nav">←</span> <span class="text-nav">Hashing is good</span></a></div>
+
+		
+		</div>
+	</nav><!-- #nav-below -->
+	
+			
+<div id="comments" class="comments-area">
+	<div class="comments-wrap wrap">
+
+					<h2 class="comments-title">
+				9 thoughts on “<span>Binary Indexed Tree (Fenwick Tree)</span>”			</h2>
+
+			
+			<ol class="comment-list">
+					<li class="post pingback">
+		<p>Pingback: <a href="https://iitkgpsam.wordpress.com/2015/07/27/getting-started-with-competitive-coding/" rel="external nofollow" class="url">Getting started with competitive coding | Sameer Chaudhari</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment even thread-even depth-1 highlander-comment" id="li-comment-50">
+		<article id="comment-50" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(6)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-0"></span>
+					<cite class="fn theme-genericon">Anonymous</cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>raton kumar from Bangladesh<br>
+pls write about “segment tree”<br>
+thanks in advance</p>
+<p id="comment-like-50" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=50&_wpnonce=6fdde17385" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-50" class="comment-like-feedback">Like</span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-50"><time datetime="2015-06-20T12:45:40+00:00">
+				June 20, 2015 at 12:45 pm				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=50#respond" onclick="return addComment.moveForm( &quot;comment-50&quot;, &quot;50&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to ">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="li-comment-49">
+		<article id="comment-49" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(6)" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-false-1"></span>
+					<cite class="fn theme-genericon">Anonymous</cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>well explained. after browsing through lots of youtube videos and articles finally i get it. thank you very much.<br>
+pls clarify the update process…</p>
+<p>array=[1,2,3,4]<br>
+sumarray(0,3) = 10<br>
+update(1,2)  // update 2 with value 2<br>
+result should be 10<br>
+but the result is sumaray(0,3) = 12</p>
+<p id="comment-like-49" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=49&_wpnonce=661da14419" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-49" class="comment-like-feedback">Liked by <a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" class="view-likers" data-like-count="1">1 person</a></span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-49"><time datetime="2015-06-20T12:39:29+00:00">
+				June 20, 2015 at 12:39 pm				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=49#respond" onclick="return addComment.moveForm( &quot;comment-49&quot;, &quot;49&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to ">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-sanukumargupta comment-author-is-site-member bypostauthor even depth-2 highlander-comment" id="li-comment-51">
+		<article id="comment-51" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/57f6ba961df97422a71ee7acb0b26766" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-57f6ba961df97422a71ee7acb0b26766-1"></span>
+					<cite class="fn theme-genericon"><a href="https://sanugupta.wordpress.com/" rel="external nofollow" class="url">Sanu Kumar Gupta</a></cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>Here update(i,v) represents: value at index i should be increased with value v.<br>
+As much I understood you are assuming that update(i,v) is setting the value at index i to v which is wrong. You can modify this function to do what you want by passing the value v= new value- current value at index i.<br>
+Hope this helps!</p>
+<p id="comment-like-51" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=51&_wpnonce=1d92e21b7b" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-51" class="comment-like-feedback">Like</span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-51"><time datetime="2015-06-20T18:44:19+00:00">
+				June 20, 2015 at 6:44 pm				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=51#respond" onclick="return addComment.moveForm( &quot;comment-51&quot;, &quot;51&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to Sanu Kumar Gupta">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-even depth-1 highlander-comment" id="li-comment-45">
+		<article id="comment-45" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/d6295e604888987c40e4454c3440c971" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-d6295e604888987c40e4454c3440c971-0"></span>
+					<cite class="fn theme-genericon">Anonymous</cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>Should it not be  k -=(k &amp; (-k)); instead of  k +=(k &amp; (-k)); in Code to Intialize.</p>
+<p id="comment-like-45" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=45&_wpnonce=d998e58625" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-45" class="comment-like-feedback">Like</span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-45"><time datetime="2015-02-12T02:15:55+00:00">
+				February 12, 2015 at 2:15 am				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=45#respond" onclick="return addComment.moveForm( &quot;comment-45&quot;, &quot;45&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to ">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	<ul class="children">
+	<li class="comment byuser comment-author-sanukumargupta comment-author-is-site-member bypostauthor even depth-2 highlander-comment" id="li-comment-46">
+		<article id="comment-46" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/57f6ba961df97422a71ee7acb0b26766" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-57f6ba961df97422a71ee7acb0b26766-2"></span>
+					<cite class="fn theme-genericon"><a href="https://sanugupta.wordpress.com/" rel="external nofollow" class="url">Sanu Kumar Gupta</a></cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>No, because for every index …contribution should be added to the next ones</p>
+<p id="comment-like-46" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=46&_wpnonce=71c8394f3e" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-46" class="comment-like-feedback">Like</span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-46"><time datetime="2015-02-13T12:35:48+00:00">
+				February 13, 2015 at 12:35 pm				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=46#respond" onclick="return addComment.moveForm( &quot;comment-46&quot;, &quot;46&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to Sanu Kumar Gupta">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+</ul><!-- .children -->
+</li><!-- #comment-## -->
+	<li class="comment odd alt thread-odd thread-alt depth-1 highlander-comment" id="li-comment-20">
+		<article id="comment-20" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/933285225d6a05a99fe35d72b38ff17e" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-933285225d6a05a99fe35d72b38ff17e-0"></span>
+					<cite class="fn theme-genericon">Anonymous</cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>thanks for explaining it in better way <span class="wp-smiley wp-emoji wp-emoji-smile" title=":)">:)</span></p>
+<p id="comment-like-20" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=20&_wpnonce=3a2fd9504c" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-20" class="comment-like-feedback">Liked by <a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" class="view-likers" data-like-count="1">1 person</a></span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-20"><time datetime="2014-12-30T16:36:38+00:00">
+				December 30, 2014 at 4:36 pm				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=20#respond" onclick="return addComment.moveForm( &quot;comment-20&quot;, &quot;20&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to Anonymous">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://sbit.t15.org/wordpress/data-structures-and-algorithms/" rel="external nofollow" class="url">Data Structures and Algorithms | sbit</a></p>
+	</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-rookiecoder594 even thread-even depth-1 highlander-comment" id="li-comment-12">
+		<article id="comment-12" class="comment">
+			<footer>
+				<div class="comment-author vcard">
+					<span class="comment-author-avatar"><img alt="" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/07642b3dc916f4593334f308f2aced08" class="avatar avatar-48 grav-hashed grav-hijack" height="48" width="48" id="grav-07642b3dc916f4593334f308f2aced08-0"></span>
+					<cite class="fn theme-genericon"><a href="http://gauravmishra594.wordpress.com/" rel="external nofollow" class="url">rookiecoder594</a></cite> <span class="says">says:</span>				</div><!-- .comment-author .vcard -->
+			</footer>
+
+			<div class="comment-content">
+				<p>nice explanation</p>
+<p id="comment-like-12" data-liked="comment-not-liked" class="comment-likes comment-not-liked"><a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?like_comment=12&_wpnonce=88d3c1ef14" class="comment-like-link needs-login" rel="nofollow" data-blog="62683262"><span>Like</span></a><span id="comment-like-count-12" class="comment-like-feedback">Liked by <a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" class="view-likers" data-like-count="1">1 person</a></span></p>
+							</div>
+
+			<div class="comment-meta commentmetadata">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/comment-page-1/#comment-12"><time datetime="2014-09-23T21:26:01+00:00">
+				September 23, 2014 at 9:26 pm				</time></a>
+				<a rel="nofollow" class="comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/?replytocom=12#respond" onclick="return addComment.moveForm( &quot;comment-12&quot;, &quot;12&quot;, &quot;respond&quot;, &quot;144&quot; )" aria-label="Reply to rookiecoder594">Reply</a>							</div><!-- .comment-meta .commentmetadata -->
+		</article><!-- #comment-## -->
+
+	</li><!-- #comment-## -->
+			</ol><!-- .comment-list -->
+
+			
+		
+		
+								<div id="respond" class="comment-respond js">
+				<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#respond" style="display:none;">Cancel reply</a></small></h3>
+									<form action="https://sanugupta.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+																										
+
+
+												<input type="hidden" id="highlander_comment_nonce" name="highlander_comment_nonce" value="45cef73eb4"><input type="hidden" name="_wp_http_referer" value="/2014/08/29/binary-indexed-tree-fenwick-tree/">
+<input type="hidden" name="hc_post_as" id="hc_post_as" value="guest">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px; padding: 0px; box-sizing: content-box; word-wrap: break-word; overflow: hidden; -webkit-transition: none; transition: none; height: 0px !important; min-height: 0px !important; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 20.6956520080566px; width: 530px;" class="autosizejs "></textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 40px; overflow: hidden; word-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource.html" width="24" height="24" scrolling="no" allowtransparency="true" seamless="seamless" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/ad516503a11cd5ca435acc9bb6523536" alt="Gravatar" width="25" class="no-grav">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name</label>
+					<div class="comment-form-input"><input id="author" name="author" type="text" value=""></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="text" value=""></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/wplogo.png" alt="WordPress.com Logo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="">
+				<input type="hidden" name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'wordpress' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/ad516503a11cd5ca435acc9bb6523536" alt="Twitter picture" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="">
+				<input type="hidden" name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'twitter' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/ad516503a11cd5ca435acc9bb6523536" alt="Facebook photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="">
+				<input type="hidden" name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'facebook' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/ad516503a11cd5ca435acc9bb6523536" alt="Google+ photo" width="25" class="no-grav">
+			</div>
+
+				<div class="comment-form-fields">
+				<input type="hidden" name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="">
+				<input type="hidden" name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout( 'googleplus' );">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input type="checkbox" name="subscribe" id="subscribe" value="subscribe" style="width: auto;" tabindex="6"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p><p class="post-subscription-form"><input type="checkbox" name="subscribe_blog" id="subscribe_blog" value="subscribe" style="width: auto;" tabindex="7"> <label class="subscribe-label" id="subscribe-blog-label" for="subscribe_blog" style="display: inline;">Notify me of new posts via email.</label></p></div>
+
+						
+						<p class="form-submit" style="display: none;"><input name="submit" type="submit" id="comment-submit" class="submit" value="Post Comment"> <input type="hidden" name="comment_post_ID" value="144" id="comment_post_ID">
+<input type="hidden" name="comment_parent" id="comment_parent" value="0">
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="27deccab51"></p>
+<input type="hidden" name="genseq" value="1440097145">
+<p style="display: none;"></p>					<input type="hidden" id="ak_js" name="ak_js" value="1440097162737"></form>
+							</div><!-- #respond -->
+			<div style="clear: both"></div>
+	</div><!-- .comments-wrap -->
+</div><!-- #comments -->
+		
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+	</div><!-- #main -->
+
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="site-info wrap">
+						<a href="https://wordpress.com/?ref=footer_blog">Blog at WordPress.com</a>.
+			<span class="sep"> | </span>
+			<a href="https://wordpress.com/themes/ryu/" title="Learn more about this theme">The Ryu Theme</a>.		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<!-- wpcom_wp_footer -->
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-d41d8cd98f00b204e9800998ecf8427e">
+	</div>
+	<div class="grofile-hash-map-57f6ba961df97422a71ee7acb0b26766">
+	</div>
+	<div class="grofile-hash-map-d6295e604888987c40e4454c3440c971">
+	</div>
+	<div class="grofile-hash-map-933285225d6a05a99fe35d72b38ff17e">
+	</div>
+	<div class="grofile-hash-map-07642b3dc916f4593334f308f2aced08">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging In\u2026","submittingText":"Posting Comment\u2026","postCommentText":"Post Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s: You are commenting using your %2$s account.","logoutText":"Log Out","loginText":"Log In","connectURL":"https:\/\/sanugupta.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/sanugupta.wordpress.com\/wp-login.php?action=logout&_wpnonce=c9b70e7fd0","homeURL":"https:\/\/sanugupta.wordpress.com\/","postID":"144","gravDefault":"identicon","enterACommentError":"Please enter a comment","enterEmailError":"Please enter your email address here","invalidEmailError":"Invalid email address","enterAuthorError":"Please enter your name here","gravatarFromEmail":"This picture will show whenever you leave a comment. Click to customize it.","logInToExternalAccount":"Log in to use details from one of these accounts.","change":"Change","changeAccount":"Change Account","comment_registration":"","userIsLoggedIn":"","isJetpack":"0","text_direction":"ltr"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(7)"></script>
+
+	<div id="bit" class="loggedout-follow-normal" style="bottom: -315px;">
+		<a class="bsub" href="javascript:void(0)"><span id="bsub-text">Follow</span></a>
+		<div id="bitsubscribe">
+
+					<h3><label for="loggedout-follow-field">Follow “Data Structures and Algorithms with "saanc"”</label></h3>
+
+			<form action="https://subscribe.wordpress.com/" method="post" accept-charset="utf-8" id="loggedout-follow">
+			<p>Get every new post delivered to your Inbox.</p>
+
+			<p id="loggedout-follow-error" style="display: none;"></p>
+
+						<p class="bit-follow-count">Join 843 other followers</p>
+			<p><input type="email" name="email" placeholder="Enter your email address" id="loggedout-follow-field"></p>
+
+			<input type="hidden" name="action" value="subscribe">
+			<input type="hidden" name="blog_id" value="62683262">
+			<input type="hidden" name="source" value="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/">
+			<input type="hidden" name="sub-type" value="loggedout-follow">
+
+			<input type="hidden" id="_wpnonce" name="_wpnonce" value="08ebe2ec75"><input type="hidden" name="_wp_http_referer" value="/2014/08/29/binary-indexed-tree-fenwick-tree/">
+			<p id="bsub-subscribe-button"><input type="submit" value="Sign me up"></p>
+			</form>
+					<div id="bsub-credit"><a href="https://wordpress.com/?ref=lof">Build a website with WordPress.com</a></div>
+		</div><!-- #bitsubscribe -->
+	</div><!-- #bit -->
+<script type="text/javascript" charset="UTF-8" id="polldaddyRatings"><!--//--><![CDATA[//><!--
+PDRTJS_settings_7658321_post_144={"id":7658321,"unique_id":"wp-post-144","title":"Binary%20Indexed%20Tree%20%28Fenwick%20Tree%29","permalink":"https:\/\/sanugupta.wordpress.com\/2014\/08\/29\/binary-indexed-tree-fenwick-tree\/","item_id":"_post_144"}; if ( typeof PDRTJS_RATING !== 'undefined' ){if ( typeof PDRTJS_7658321_post_144 == 'undefined' ){PDRTJS_7658321_post_144 = new PDRTJS_RATING( PDRTJS_settings_7658321_post_144 );}}
+//--><!]]></script><script type="text/javascript" charset="UTF-8" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/rating.js"></script>
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/sanugupta.wordpress.com\/2014\/08\/29\/binary-indexed-tree-fenwick-tree\/":144};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-google-plus-1' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomgoogle-plus-1', 'menubar=1,resizable=1,width=480,height=550' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+			
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-tumblr' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtumblr', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+							<script type="text/javascript">
+				jQuery(document).on('ready', function(){
+					jQuery('body').on('click', 'a.share-pinterest', function(e){
+						e.preventDefault();
+						// Load Pinterest Bookmarklet code
+						var s = document.createElement("script");
+						s.type = "text/javascript";
+						s.src = window.location.protocol + "//assets.pinterest.com/js/pinmarklet.js?r=" + ( Math.random() * 99999999 );
+						var x = document.getElementsByTagName("script")[0];
+						x.parentNode.insertBefore(s, x);
+						// Trigger Stats
+						var s = document.createElement("script");
+						s.type = "text/javascript";
+						s.src = this + ( this.toString().indexOf( '?' ) ? '&' : '?' ) + 'js_only=1';
+						var x = document.getElementsByTagName("script")[0];
+						x.parentNode.insertBefore(s, x);
+					});
+				});
+			</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-linkedin' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomlinkedin', 'menubar=1,resizable=1,width=580,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-pocket' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcompocket', 'menubar=1,resizable=1,width=450,height=450' );
+				return false;
+			});
+		});
+		</script>
+				<iframe src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+		<script type="text/javascript">
+		//<![CDATA[
+			var jetpackLikesWidgetQueue = [];
+			var jetpackLikesWidgetBatch = [];
+			var jetpackLikesMasterReady = false;
+
+			function JetpackLikespostMessage( message, target ) {
+				if ( "string" === typeof message ){
+					try{
+						message = JSON.parse( message );
+					}
+					catch(e) {
+						return;
+					}
+				}
+
+				pm( {
+					target: target,
+					type: 'likesMessage',
+					data: message,
+					origin: '*'
+				} );
+			}
+
+			function JetpackLikesBatchHandler() {
+				var requests = [];
+				jQuery( 'div.jetpack-likes-widget-unloaded' ).each( function( i ) {
+					if ( jetpackLikesWidgetBatch.indexOf( this.id ) > -1 )
+						return;
+					jetpackLikesWidgetBatch.push( this.id );
+					var regex = /like-(post|comment)-wrapper-(\d+)-(\d+)-(\w+)/;
+					var match = regex.exec( this.id );
+					if ( ! match || match.length != 5 )
+						return;
+
+					var info = {
+						blog_id: match[2],
+						width:   this.width
+					};
+
+					if ( 'post' == match[1] ) {
+						info.post_id = match[3];
+					} else if ( 'comment' == match[1] ) {
+						info.comment_id = match[3];
+					}
+
+					info.obj_id = match[4];
+
+					requests.push( info );
+				});
+
+				if ( requests.length > 0 ) {
+					JetpackLikespostMessage( { event: 'initialBatch', requests: requests }, window.frames['likes-master'] );
+				}
+			}
+
+			function JetpackLikesMessageListener( event ) {
+				if ( "undefined" == typeof event.event )
+					return;
+
+				if ( 'masterReady' == event.event ) {
+					jQuery( document ).ready( function() {
+						jetpackLikesMasterReady = true;
+
+						var stylesData = {
+								event: 'injectStyles'
+						};
+
+						if ( jQuery( 'iframe.admin-bar-likes-widget' ).length > 0 ) {
+							JetpackLikespostMessage( { event: 'adminBarEnabled' }, window.frames[ 'likes-master' ] );
+
+							stylesData.adminBarStyles = {
+								background: jQuery( '#wpadminbar .quicklinks li#wp-admin-bar-wpl-like > a' ).css( 'background' ),
+								isRtl: ( 'rtl' == jQuery( '#wpadminbar' ).css( 'direction' ) )
+							};
+						}
+
+						if ( !window.addEventListener )
+							jQuery( '#wp-admin-bar-admin-bar-likes-widget' ).hide();
+
+						stylesData.textStyles = {
+							color: jQuery( '.sd-text-color').css( 'color' ),
+							fontFamily: jQuery( '.sd-text-color' ).css( 'font-family' ),
+							fontSize: jQuery( '.sd-text-color' ).css( 'font-size' ),
+							direction: jQuery( '.sd-text-color' ).css( 'direction' ),
+							fontWeight: jQuery( '.sd-text-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-text-color' ).css( 'font-style' ),
+							textDecoration: jQuery( '.sd-text-color' ).css('text-decoration')
+						};
+
+						stylesData.linkStyles = {
+							color: jQuery( '.sd-link-color' ).css('color'),
+							fontFamily: jQuery( '.sd-link-color' ).css('font-family'),
+							fontSize: jQuery( '.sd-link-color' ).css('font-size'),
+							textDecoration: jQuery( '.sd-link-color' ).css('text-decoration'),
+							fontWeight: jQuery( '.sd-link-color' ).css( 'font-weight' ),
+							fontStyle: jQuery( '.sd-link-color' ).css( 'font-style' )
+						};
+
+						JetpackLikespostMessage( stylesData, window.frames[ 'likes-master' ] );
+
+						JetpackLikesBatchHandler();
+
+						jQuery( document ).on( 'inview', 'div.jetpack-likes-widget-unloaded', function() {
+							jetpackLikesWidgetQueue.push( this.id );
+						});
+					});
+				}
+
+				if ( 'showLikeWidget' == event.event ) {
+					jQuery( '#' + event.id + ' .post-likes-widget-placeholder'  ).fadeOut( 'fast', function() {
+						jQuery( '#' + event.id + ' .post-likes-widget' ).fadeIn( 'fast', function() {
+							JetpackLikespostMessage( { event: 'likeWidgetDisplayed', blog_id: event.blog_id, post_id: event.post_id, obj_id: event.obj_id }, window.frames['likes-master'] );
+						});
+					});
+				}
+
+				if ( 'clickReblogFlair' == event.event ) {
+					wpcom_reblog.toggle_reblog_box_flair( event.obj_id );
+				}
+
+				if ( 'showOtherGravatars' == event.event ) {
+					var $container = jQuery( '#likes-other-gravatars' );
+					var $list = $container.find( 'ul' );
+
+					$container.hide();
+					$list.html( '' );
+
+					$container.find( '.likes-text span' ).text( event.total );
+
+					jQuery.each( event.likers, function( i, liker ) {
+						$list.append( '<li class="' + liker.css_class + '"><a href="' + liker.profile_URL + '" class="wpl-liker" rel="nofollow" target="_parent"><img src="' + liker.avatar_URL + '" alt="' + liker.name + '" width="30" height="30" style="padding-right: 3px;" /></a></li>');
+					} );
+
+					var offset = jQuery( "[name='" + event.parent + "']" ).offset();
+
+					$container.css( 'left', offset.left + event.position.left - 10 + 'px' );
+					$container.css( 'top', offset.top + event.position.top - 33 + 'px' );
+
+					var rowLength = Math.floor( event.width / 37 );
+					var height = ( Math.ceil( event.likers.length / rowLength ) * 37 ) + 13;
+					if ( height > 204 ) {
+						height = 204;
+					}
+
+					$container.css( 'height', height + 'px' );
+					$container.css( 'width', rowLength * 37 - 7 + 'px' );
+
+					$list.css( 'width', rowLength * 37 + 'px' );
+
+					$container.fadeIn( 'slow' );
+
+					var scrollbarWidth = $list[0].offsetWidth - $list[0].clientWidth;
+					if ( scrollbarWidth > 0 ) {
+						$container.width( $container.width() + scrollbarWidth );
+						$list.width( $list.width() + scrollbarWidth );
+					}
+				}
+			}
+
+			pm.bind( 'likesMessage', function(e) { JetpackLikesMessageListener(e); } );
+
+			jQuery( document ).click( function( e ) {
+				var $container = jQuery( '#likes-other-gravatars' );
+
+				if ( $container.has( e.target ).length === 0 ) {
+					$container.fadeOut( 'slow' );
+				}
+			});
+
+			function JetpackLikesWidgetQueueHandler() {
+				var wrapperID;
+				if ( ! jetpackLikesMasterReady ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				if ( jetpackLikesWidgetQueue.length > 0 ) {
+					// We may have a widget that needs creating now
+					var found = false;
+					while( jetpackLikesWidgetQueue.length > 0 ) {
+						// Grab the first member of the queue that isn't already loading.
+						wrapperID = jetpackLikesWidgetQueue.splice( 0, 1 )[0];
+						if ( jQuery( '#' + wrapperID ).hasClass( 'jetpack-likes-widget-unloaded' ) ) {
+							found = true;
+							break;
+						}
+					}
+					if ( ! found ) {
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				} else if ( jQuery( 'div.jetpack-likes-widget-unloaded' ).length > 0 ) {
+					// Grab any unloaded widgets for a batch request
+					JetpackLikesBatchHandler();
+
+					// Get the next unloaded widget
+					wrapperID = jQuery( 'div.jetpack-likes-widget-unloaded' ).first()[0].id;
+					if ( ! wrapperID ) {
+						// Everything is currently loaded
+						setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+						return;
+					}
+				}
+
+				if ( 'undefined' === typeof wrapperID ) {
+					setTimeout( JetpackLikesWidgetQueueHandler, 500 );
+					return;
+				}
+
+				var $wrapper = jQuery( '#' + wrapperID );
+				$wrapper.find( 'iframe' ).remove();
+
+				if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='22px' width='68px' frameBorder='0' scrolling='no' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				} else {
+					$wrapper.find( '.post-likes-widget-placeholder' ).after( "<iframe class='post-likes-widget jetpack-likes-widget' name='" + $wrapper.data( 'name' ) + "' height='55px' width='100%' frameBorder='0' src='" + $wrapper.data( 'src' ) + "'></iframe>" );
+				}
+
+				$wrapper.removeClass( 'jetpack-likes-widget-unloaded' ).addClass( 'jetpack-likes-widget-loading' );
+
+				$wrapper.find( 'iframe' ).load( function( e ) {
+					var $iframe = jQuery( e.target );
+					$wrapper.removeClass( 'jetpack-likes-widget-loading' ).addClass( 'jetpack-likes-widget-loaded' );
+
+					JetpackLikespostMessage( { event: 'loadLikeWidget', name: $iframe.attr( 'name' ), width: $iframe.width() }, window.frames[ 'likes-master' ] );
+
+					if ( $wrapper.hasClass( 'slim-likes-widget' ) ) {
+						$wrapper.find( 'iframe' ).Jetpack( 'resizeable' );
+					}
+				});
+				setTimeout( JetpackLikesWidgetQueueHandler, 250 );
+			}
+			JetpackLikesWidgetQueueHandler();
+		//]]>
+		</script>
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/form.js"></script>
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(8)"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414g&amp;ver=3.0.9b";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var comment_like_text = {"loading":"Loading..."};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var JetpackEmojiSettings = {"base_url":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/emoji\/twemoji\/"};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/saved_resource(9)"></script>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script><script src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/w.js" type="text/javascript" async="" defer=""></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', {'blog_id':'62683262','blog_tz':'5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view', {'blog':'62683262','v':'wpcom','tz':'5','user_id':'0','post':'144','subd':'sanugupta'}]);
+_stq.push(['extra', {'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMm9fLEFlLTVHRC0/SjByNEl6XUJ6aEt3SDAxN3FZb3k0PSZRd2dUdCUudmNUMUpCR0daL2ZVLkMuSzFqL2l4ak9fME5RZi9ja2hJQ0h8YVNla3JhLFItRGplc1hUUDMmUGVQVHpmZURUbk5yQz1tZ0I2TDZdc2ZaJlEya2ZzdnVoL0M5SzVOUkFbTUpsY2dpL1B2d1R0eiVmcFolYj9zPXolMkZ+XzNLRX5iSkF6JWQ9eHwuWzhpbTVHXUptN2ZtYUVXdVQtWmFvNTksNjNxJTR3bF9rZHF2NFhWS3J5X2o3fnRwJTA/V1ItS212ZVlbS3YleUktLmJSeGYvamdfeUR3bHgtS1d1QkdoWG1Xc01BYmxmWzV6QUtPTV1EWUVsfFlYSG5IKy0='}]);
+_stq.push([ 'clickTrackerInit', '62683262', '144' ]);
+	</script>
+<noscript>&lt;img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /&gt;</noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+	}
+	
+}
+</script>
+
+
+<!--
+	generated in 0.467 seconds
+	86814 bytes batcached for 300 seconds
+-->
+<div class="comment-likes-overlay" style="display: none;"></div><div id="sharing_email" style="display: none;">
+		<form action="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc_.html" method="post">
+			<label for="target_email">Send to Email Address</label>
+			<input type="email" name="target_email" id="target_email" value="">
+
+			
+				<label for="source_name">Your Name</label>
+				<input type="text" name="source_name" id="source_name" value="">
+
+				<label for="source_email">Your Email Address</label>
+				<input type="email" name="source_email" id="source_email" value="">
+
+						<input type="text" id="jetpack-source_f_name" name="source_f_name" class="input" value="" size="25" autocomplete="off">
+			<script> document.getElementById('jetpack-source_f_name').value = ''; </script>
+			<div class="recaptcha" id="sharing_recaptcha"></div><input type="hidden" name="recaptcha_public_key" id="recaptcha_public_key" value="6LcYW8MSAAAAADBAuEH9yaPcF7lWh11Iq62ZKtoo">
+			<img style="float: right; display: none" class="loading" src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/loading.gif" alt="loading" width="16" height="16">
+			<input type="submit" value="Send Email" class="sharing_send">
+			<a rel="nofollow" href="https://sanugupta.wordpress.com/2014/08/29/binary-indexed-tree-fenwick-tree/#cancel" class="sharing_cancel">Cancel</a>
+
+			<div class="errors errors-1" style="display: none;">
+				Post was not sent - check your email addresses!			</div>
+
+			<div class="errors errors-2" style="display: none;">
+				Email check failed, please try again			</div>
+
+			<div class="errors errors-3" style="display: none;">
+				Sorry, your blog cannot share posts by email.			</div>
+		</form>
+	</div><img src="./Binary Indexed Tree (Fenwick Tree) _ Data Structures and Algorithms with _saanc__files/g.gif" id="wpstats"></body></html>

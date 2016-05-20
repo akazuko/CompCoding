@@ -1,0 +1,16 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-09T15:20:31+05:30
+
+====== New Shizz ======
+Created Saturday 09 April 2016
+
+spacy.io
+word2vec
+gensim
+CRF
+wit.AI
+duckling.ai
+Freebase data and SPARQL
+GOOGLE SPEECH API
+Google Knowledge Graph API

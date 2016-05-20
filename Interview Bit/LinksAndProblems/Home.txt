@@ -1,0 +1,26 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2016-04-08T02:43:52+05:30
+
+====== Programming Links: ======
+Created Friday 08 April 2016
+
+===== Topic wise: =====
+
+== Segement Tree  : ==
+https://discuss.codechef.com/tags/segment-tree/
+http://letuskode.blogspot.in/2013/01/segtrees.html
+
+===== Yet to be done: =====
+http://www.spoj.com/problems/CSTREET/
+https://www.codechef.com/COOK63/problems/PP
+http://codeforces.com/problemset/problem/514/C
+
+=== Hackerrank: ===
+https://www.hackerrank.com/contests/lab-9-dsa/challenges/just-another-dijkstra-question/copy-from/5520313
+https://www.hackerrank.com/challenges/mr-k-marsh
+https://www.hackerrank.com/challenges/priyanka-and-toys
+https://www.hackerrank.com/challenges/sherlock-and-minimax
+https://www.hackerrank.com/challenges/board-cutting
+
+===== Done : =====
