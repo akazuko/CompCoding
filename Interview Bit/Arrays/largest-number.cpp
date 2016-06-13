@@ -3,7 +3,7 @@ int comp(string a, string b){
     string BA = b.append(a);
     return AB > BA;
 }
-
+ 
 string Solution::largestNumber(const vector<int> &A) {
     // Do not write main() function.
     // Do not read input, instead use the arguments to the function.
