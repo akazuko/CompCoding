@@ -6,7 +6,7 @@ vector<int> computePrefix(string w){
 	vector<int> prefixTable(w.size());
 	int k = 0;
 	prefixTable[0] = 0;
-	for(int i=1;i<w.size(); ++i){
+	for(int i=1;i<w.size(); ++)i{
 		while(k>0 && w[k]!=w[i])
 			k = prefixTable[k-1];
 		if(w[k]==w[i])
