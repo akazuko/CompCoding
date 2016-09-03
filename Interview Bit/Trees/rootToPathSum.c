@@ -23,22 +23,11 @@
  * @Output Integer
  */
  
-int trav(treenode* root, int sum){
-        //printf("%d\n", root->val);
+bool hasPathSum(Node *node, int sum)
+{  
     
-    if(root==NULL)
-        return sum==0;
-    
-    int subSum=sum-root->val;
-    if(subSum==0 && root->left==NULL && root->right==NULL)
-        return 1;
-    
-    if(root->left!=NULL && trav(root->left, subSum)==1)
-        return 1;
-    if(root->right!=NULL && trav(root->right, subSum)==1)
-        return 1;
-    return 0;
-}
-int hasPathSum(treenode* A, int B) {
-    return trav(A, B);
+   if(node->left==NULL && node->right==NULL) return sum==(node->data);
+   if(node->left!=NULL && hasPathSum(node->left, sum - node->data)) return true;
+   if(node->right!=NULL && hasPathSum(node->right, sum - node->data)) return true;
+   return false;
 }
